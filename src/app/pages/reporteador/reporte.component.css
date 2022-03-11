@@ -1,0 +1,129 @@
+.tabla {
+    border: 1px solid #70777D;
+    background-color: #fff;
+    /* width: 900px; */
+}
+
+.tablaW {
+    border: 1px solid #70777D;
+    background-color: #FFF;
+}
+
+#formapedi {
+    border: 1px solid #006;
+    background-color: #FFF;
+    /*  background: url(../img/comext/pedimento.gif);*/
+    /*height: auto;
+  width: auto;
+  
+  background-repeat: no-repeat;
+  height: 922px;
+  width: 885px;*/
+    /*  margin: 20px 0px 0px 80px;*/
+}
+
+.tblFont {
+    color: #333;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.tblFontn {
+    color: #333;
+    font-size: 9px;
+    /*font-weight: bold;*/
+}
+
+.tblPedi {
+    border: 1px solid #999;
+}
+
+.tblPedi1 {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #999;
+    width: 900px;
+    background-color: #fff;
+}
+
+.gris {
+    background-color: #CCCCCC;
+    font-weight: bold;
+}
+
+.tblPedi2 {
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-right-color: #999;
+    border-bottom-color: #999;
+}
+
+.tblPedi3 {
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #999;
+}
+
+.tdw-10 {
+    width: 10%;
+}
+
+.tdw-20 {
+    width: 20%;
+}
+
+.tdw-30 {
+    width: 30%;
+}
+
+.tdw-40 {
+    width: 40%;
+}
+
+.tdw-50 {
+    width: 50%;
+}
+
+.tdw-60 {
+    width: 60%;
+}
+
+.tdw-70 {
+    width: 70%;
+}
+
+.tdw-80 {
+    width: 80%;
+}
+
+.tdw-90 {
+    width: 90%;
+}
+
+.tdw-100 {
+    width: 100%;
+}
+
+input[type="checkbox"] {
+    color: #333;
+    font-size: 9px;
+}
+
+.checkbox {
+    /* margin-top: 10px; */
+    margin-bottom: -10px;
+}
+
+.checkbox,
+label {
+    color: #333;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+/* table {
+    padding: 20px;
+} */

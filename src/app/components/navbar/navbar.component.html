@@ -1,0 +1,121 @@
+<header class="topbar">
+    <nav class="navbar top-navbar navbar-expand-md navbar-light">
+        <!-- ============================================================== -->
+        <!-- Logo -->
+        <!-- ============================================================== -->
+        <div class="navbar-header">
+            <a class="navbar-brand">
+                <!-- Logo icon --><b>
+                    <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                    <!-- Dark Logo icon -->
+                    <img src="assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                    <!-- Light Logo icon -->
+                    <img src="assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                </b>
+                <!--End Logo icon -->
+                <!-- Logo text --><span>
+                 <!-- dark Logo text -->
+                 <img src="assets/images/logo-text.png" alt="homepage" class="dark-logo" />
+                 <!-- Light Logo text -->    
+                 <img src="assets/images/logo-light-text.png" class="light-logo" alt="homepage" /></span> </a>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Logo -->
+        <!-- ============================================================== -->
+
+
+        <div class="navbar-collapse">
+            <!-- ============================================================== -->
+            <!-- toggle and nav items -->
+            <!-- ============================================================== -->
+            <ul class="navbar-nav mr-auto">
+                <!-- This is  -->
+                <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                <li class="nav-item"> <a class="nav-link sidebartoggler hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i class="ti-menu"></i></a> </li>
+                <li class="nav-item hidden-sm-down"></li>
+            </ul>
+
+            <!-- <div class="navbar-nav my-lg-0 text-right">
+                <h4>Hola mundo</h4>
+            </div> -->
+
+            <div class="navbar-nav mr-auto">
+                <app-breadcrumbs></app-breadcrumbs>
+            </div>
+
+            <ul class="navbar-nav my-lg-0">
+
+                <!-- ============================================================== -->
+                <!-- Search -->
+                <!-- ============================================================== -->
+                <li class="nav-item search-box">
+                    <a class="nav-link waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                    <div class="app-search">
+                        <input type="text" class="form-control" placeholder="Buscar referencia" (keyup.enter)="buscarRefe(txtBuscar.value)" #txtBuscar> <a class="srh-btn"><i class="ti-close"></i></a>
+                    </div>
+                </li>
+
+
+                <!-- ============================================================== -->
+                <!-- menu de los filtros -->
+                <!-- ============================================================== -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-filter"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right mailbox animated fadeIn">
+                        <ul>
+                            <li>
+                                <div class="drop-title">Ajuste de consulta</div>
+                            </li>
+                            <li>
+                                <div class="message-center" style="padding: 5px 20px;">
+                                    <form class="form" [formGroup]="form">
+                                        <div class="form-group row">
+                                            <label for="" class="col-3 col-form-label">Aduana</label>
+                                            <div class="col-9">
+                                                <select class="custom-select col-12" formControlName="cadu" name="cadu">
+                                                  <option *ngFor="let adu of aduas" value="{{adu.value}}">{{adu.option}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-3 col-form-label">Mes</label>
+                                            <div class="col-9">
+                                                <select class="custom-select col-12" formControlName="cmes" name="cmes">
+                                                  <option *ngFor="let mes of meses" value="{{mes.value}}">{{mes.option}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="" class="col-3 col-form-label">Año</label>
+                                            <div class="col-9">
+                                                <select class="custom-select col-12" formControlName="cano" name="cano">
+                                                  <option *ngFor="let ano of anios" value="{{ano.value}}">{{ano.option}}</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+                            <!-- <li>
+                                <a class="nav-link text-center" href="javascript:void(0);"> <strong>Check all notifications</strong> <i class="fa fa-angle-right"></i> </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </li>
+
+                <!-- ============================================================== -->
+                <!-- Language -->
+                <!-- ============================================================== -->
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="flag-icon flag-icon-mx"></i></a>
+                    <div class="dropdown-menu dropdown-menu-right animated fadeIn">
+                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-us"></i> Usa</a>
+                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-fr"></i> French</a>
+                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-cn"></i> China</a>
+                        <a class="dropdown-item" href="#"><i class="flag-icon flag-icon-de"></i> Dutch</a>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+    </nav>
+</header>

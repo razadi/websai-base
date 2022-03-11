@@ -1,0 +1,233 @@
+<div id="content" class="app-content" role="main">
+    <div class="app-content-body ">
+        <div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="app.settings.asideFolded = false; app.settings.asideDock = false;">
+            <!-- main -->
+            <div class="col" id="newreptmp">
+                <div class="panel panel-default">
+                    <div class="panel-heading font-bold">Titulo (Subtitulo)</div>
+                    <div class="panel-body">
+                        <!-- role="form"<form [formGroup]="form" (ngSubmit)="submit()"> -->
+                        <form #f (submit)="submit(f)">
+                            <input type="hidden" name="opera" value="opera" />
+                            <input type="hidden" name="clave" value="repid" />
+                            <div class="row">
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" placeholder="Nombre del Reporte" required="required" value="{{nombre}}">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="text" class="form-control" name="descrip" id="descrip" placeholder="Descripción">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <button type="submit" class="btn btn-success">Guardar</button>
+                                </div>
+                            </div>
+                            <div style="height: 510px; overflow: auto;">
+                                <table class="tblPedi tblFont table-responsive">
+                                    <tr>
+                                        <td colspan="8" align="center" class="tblPedi2 gris tdw-80">
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tblFont">
+                                                <tr>
+                                                    <td width="56%" align="right">PEDIMENTO</td>
+                                                    <td width="44%" align="center">
+                                                        <div class="checkbox">
+                                                            <!-- <input type="checkbox" [(ngModel)]="report" name="report[]" value="1"> -->
+                                                            <!-- <input class="form-check-input" type="checkbox" [formControlName]="0" /> {{report[0].name}} -->
+                                                            <input type="checkbox" name="campos[]" id="checkbox1" value="1">
+                                                            <label for="checkbox1">REFERENCIA </label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td width="226" align="right" class="tblPedi1 tblFontn tdw-20"><em>Página  1 de 1 &nbsp;&nbsp;&nbsp;</em></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="8" class="tblPedi2">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tblFont">
+                                                <tr>
+                                                    <td width="32%">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox2" value="2">
+                                                            <label for="checkbox2"> NO.PEDIMENTO</label>
+                                                        </div>
+                                                    </td>
+                                                    <td width="19%">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox3" value="3">
+                                                            <label for="checkbox3">T.OPER.</label>
+                                                        </div>
+                                                    </td>
+                                                    <td width="29%">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox4" value="4">
+                                                            <label for="checkbox4">CVE. PEDIMENTO</label>
+                                                        </div>
+                                                    </td>
+                                                    <td width="20%">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox5" value="5">
+                                                            <label for="checkbox5">REGIMEN</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td align="center" class="tblPedi1 gris">CERTIFICACIONES</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="8" class="tblPedi2">
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tblFont">
+                                                <tr>
+                                                    <td width="23%">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox6" value="6">
+                                                            <label for="checkbox6">DESTINO</label>
+                                                        </div>
+                                                    </td>
+                                                    <td width="28%">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox7" value="7">
+                                                            <label for="checkbox7">TIPO CAMBIO</label>
+                                                        </div>
+                                                    </td>
+                                                    <td width="29%">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox8" value="8">
+                                                            <label for="checkbox8">PESO BRUTO</label>
+                                                        </div>
+                                                    </td>
+                                                    <td width="20%">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox9" value="9">
+                                                            <label for="checkbox9">ADUANA E/S</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td rowspan="14" class="tblPedi1" valign="top">
+                                            <div class="checkbox">
+                                                <input type="checkbox" name="campos[]" id="checkbox200" value="200">
+                                                <label for="checkbox200">PAGO ELECTRÓNICO</label>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <tr>
+                                        <td colspan="4" class="tblPedi2">
+                                            <table width="75%" border="0" align="center" cellpadding="0" cellspacing="0" class="tblFont">
+                                                <tr>
+                                                    <td colspan="3" align="center">MEDIOS DE TRANSPORTE</td>
+                                                </tr>
+                                                <tr>
+                                                    <td width="36%" align="center">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox10" value="10">
+                                                            <label for="checkbox10">ENTRADA/ SALIDA</label>
+                                                        </div>
+                                                    </td>
+                                                    <td width="30%" align="center">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox11" value="11">
+                                                            <label for="checkbox11">ARRIBO</label>
+                                                        </div>
+                                                    </td>
+                                                    <td width="34%" align="center">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox12" value="12">
+                                                            <label for="checkbox12">SALIDA</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="center">&nbsp;</td>
+                                                    <td align="center">&nbsp;</td>
+                                                    <td align="center">&nbsp;</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td colspan="4" align="center" class="tblPedi2">
+                                            <table width="80%" border="0" cellpadding="0" cellspacing="0" class="tblFont">
+                                                <tr>
+                                                    <td width="69%" align="left">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox13" value="13">
+                                                            <label for="checkbox13">VALOR DOLARES</label>
+                                                        </div>
+                                                    </td>
+                                                    <td width="31%">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox14" value="14">
+                                                            <label for="checkbox14">VALOR ADUANA</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td align="left">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox15" value="15">
+                                                            <label for="checkbox15">PRECIO PAGADO</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="8" align="center" class="tblPedi2 gris"><strong>DATOS DEL IMPORTADOR / EXPORTADOR</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="8" class="tblPedi2">
+                                            <table width="100%" border="0" cellpadding="0" cellspacing="0" class="tblFont">
+                                                <tr>
+                                                    <td width="31%" valign="middle">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox16" value="16">
+                                                            <label for="checkbox16">RFC</label>
+                                                        </div>
+                                                    </td>
+                                                    <td width="69%" valign="middle">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox17" value="17">
+                                                            <label for="checkbox17">NOMBRE, DENOMINACION O RAZON SOCIAL</label>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td valign="middle">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox18" value="18">
+                                                            <label for="checkbox18">CURP</label>
+                                                        </div>
+                                                    </td>
+                                                    <td valign="middle">&nbsp;</td>
+                                                </tr>
+                                                <tr>
+                                                    <td valign="middle">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" name="campos[]" id="checkbox19" value="19">
+                                                            <label for="checkbox19">DOMICILIO</label>
+                                                        </div>
+                                                    </td>
+                                                    <td valign="middle">&nbsp;</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+
+
+
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

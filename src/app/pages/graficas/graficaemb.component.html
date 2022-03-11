@@ -1,0 +1,103 @@
+<div class="r-aside">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <h4 class="card-title"><span class="lstick"></span>Embarques en 2018</h4>
+                        <ul class="list-inline m-b-0 ml-auto">
+                            <li>
+                                <h6 class="text-muted text-info"><i class="fa fa-circle font-10 m-r-10 "></i>Importaciones</h6>
+                            </li>
+                            <li>
+                                <h6 class="text-muted text-muted"><i class="fa fa-circle font-10 m-r-10"></i>Exportaciones</h6>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="website-visitor p-relative grafica-principal-br">
+                        <app-grafica-bar [chartLabels]="barChartLabels" [chartData]="barChartData" [chartOptions]="barChartOptions" [chartColors]="barChartColors"></app-grafica-bar>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title"><span class="lstick"></span>Operación de Embarques 2018</h4>
+                    <div>
+                        <app-grafica-dona [chartLabels]="doughnutChartLabels1" [chartData]="doughnutChartData1" [chartOptions]="doughnutChartOptions" [chartColors]="doughnutChartColors1"></app-grafica-dona>
+                    </div>
+                    <table class="table vm font-14">
+                        <tr>
+                            <td class="b-0">Impor.</td>
+                            <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[0].impos}}</td>
+                            <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[0].pimpo}}%</td>
+                        </tr>
+                        <tr>
+                            <td>Expor.</td>
+                            <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[0].expos}}</td>
+                            <td class="text-right font-medium">{{graphsServ.dataGrafEmbA[0].pexpo}}%</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title"><span class="lstick"></span>Embarques por aduana 2018</h4>
+                    <div>
+                        <app-grafica-dona [chartLabels]="doughnutChartLabels2" [chartData]="doughnutChartData2" [chartOptions]="doughnutChartOptions" [chartColors]="doughnutChartColors2"></app-grafica-dona>
+                    </div>
+                    <table class="table vm font-14">
+                        <tr>
+                            <td class="b-0">AICM (470)</td>
+                            <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[1].aicm}}</td>
+                            <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[1].paicm}}%</td>
+                        </tr>
+                        <tr>
+                            <td>TOL (650)</td>
+                            <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[1].tol}}</td>
+                            <td class="text-right font-medium">{{graphsServ.dataGrafEmbA[1].ptol}}%</td>
+                        </tr>
+                        <tr>
+                            <td>MZN (160)</td>
+                            <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[1].mzn}}</td>
+                            <td class="text-right font-medium">{{graphsServ.dataGrafEmbA[1].pmzn}}%</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title"><span class="lstick"></span>Tipos de Embarques 2018</h4>
+                    <div>
+                        <app-grafica-dona [chartLabels]="doughnutChartLabels3" [chartData]="doughnutChartData3" [chartOptions]="doughnutChartOptions" [chartColors]="doughnutChartColors3"></app-grafica-dona>
+                    </div>
+                    <table class="table vm font-14">
+                        <tr>
+                            <td class="b-0">Normales</td>
+                            <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[2].norma}}</td>
+                            <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[2].pnorma}}%</td>
+                        </tr>
+                        <tr>
+                            <td>Rectif.</td>
+                            <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[2].recti}}</td>
+                            <td class="text-right font-medium">{{graphsServ.dataGrafEmbA[2].precti}}%</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+    </div>
+</div>

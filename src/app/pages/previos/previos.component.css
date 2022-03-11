@@ -1,0 +1,15 @@
+/* para que una imagen quede de fondo muy buen aporte 
+
+.clase {
+  width: 100%;
+  height: 600px;
+  background: url(imgagen);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}*/
+
+
+/* .modal{
+  background: #000;
+} */

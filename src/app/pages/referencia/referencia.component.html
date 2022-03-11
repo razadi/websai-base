@@ -1,0 +1,324 @@
+<div class="row">
+    <div class="col-12">
+        <!--    <div class="card"> -->
+
+        <div class="contact-page-aside">
+
+            <div class="vtabs customvtab">
+                <ul class="nav nav-tabs tabs-vertical" role="tablist">
+                    <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#trefe" role="tab"><span class="hidden-sm-up"><i class="ti-home"></i></span> <span class="hidden-xs-down">Pedimento</span> </a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tclie" role="tab"><span class="hidden-sm-up"><i class="ti-user"></i></span> <span class="hidden-xs-down">Cliente</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tfact" role="tab"><span class="hidden-sm-up"><i class="ti-file"></i></span> <span class="hidden-xs-down">Factura (s)</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tpart" role="tab"><span class="hidden-sm-up"><i class="ti-layers-alt"></i></span> <span class="hidden-xs-down">Partida (s)</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tetap" role="tab"><span class="hidden-sm-up"><i class="ti-flag-alt"></i></span> <span class="hidden-xs-down">Etapas</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#tobse" role="tab"><span class="hidden-sm-up"><i class="ti-info-alt"></i></span> <span class="hidden-xs-down">Observaciones</span></a> </li>
+                    <br>
+                    <li class="nav-item"> <a class="nav-link" [routerLink]="['/files', referencia]"><span class="hidden-sm-up"><i class="ti-files"></i></span> <span class="hidden-xs-down">Archivo Digital</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" [routerLink]="['/previos', referencia]"><span class="hidden-sm-up"><i class="ti-image"></i></span> <span class="hidden-xs-down">Imágenes</span></a> </li>
+                    <li class="nav-item"> <a class="nav-link" [routerLink]="['/estatus', referencia]"><span class="hidden-sm-up"><i class="ti-check-box"></i></span> <span class="hidden-xs-down">Estatus actual</span></a> </li>
+                </ul>
+
+
+                <div class="tab-content">
+
+                    <div class="tab-pane active" id="trefe" role="tabpanel">
+                        <div class="ribbon-wrapper">
+                            <div class="ribbon ribbon-bookmark ribbon-info">Referencia: <strong>{{referencia}}</strong></div>
+                            <div class="row">
+                                <div class="col-md-3 col-xs-12 b-r"> <span class="text-muted">Pedimento</span>
+                                    <br>
+                                    <p class="negrita">{{pedimento}}</p>
+                                </div>
+                                <div class="col-md-2 col-xs-6 b-r"> <span class="text-muted">Operación</span>
+                                    <br>
+                                    <p class="negrita">IMPORTACIÓN</p>
+                                </div>
+                                <div class="col-md-1 col-xs-6 b-r"> <span class="text-muted">Doc.</span>
+                                    <br>
+                                    <p class="negrita">A1</p>
+                                </div>
+                                <div class="col-md-1 col-xs-6 b-r"> <span class="text-muted">Rég.</span>
+                                    <br>
+                                    <p class="negrita">IMD</p>
+                                </div>
+                                <div class="col-md-2 col-xs-6 b-r"> <span class="text-muted">Fec.Entr.</span>
+                                    <br>
+                                    <p class="negrita">02/Oct/2018</p>
+                                </div>
+                                <div class="col-md-2 col-xs-6 b-r"> <span class="text-muted">Fec.Pago</span>
+                                    <br>
+                                    <p class="negrita">02/Oct/2018</p>
+                                </div>
+                                <div class="col-md-1 col-xs-6 b-r"> <span class="text-muted">D/O</span>
+                                    <br>
+                                    <p class="negrita">9</p>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-2 col-xs-12 b-r"> <span class="text-muted">Aduana</span>
+                                    <br>
+                                    <p class="negrita">470 (AICM)</p>
+                                </div>
+                                <div class="col-md-2 col-xs-12 b-r"> <span class="text-muted">Tipo Cambio</span>
+                                    <br>
+                                    <p class="negrita">19.9836</p>
+                                </div>
+                                <div class="col-md-2 col-xs-12 b-r"> <span class="text-muted">Peso Bruto</span>
+                                    <br>
+                                    <p class="negrita">10,725.0000</p>
+                                </div>
+                                <div class="col-md-2 col-xs-12 b-r"> <span class="text-muted">Val.Aduana</span>
+                                    <br>
+                                    <p class="negrita">608,192.00</p>
+                                </div>
+                                <div class="col-md-2 col-xs-12 b-r"> <span class="text-muted">Val.Comer.</span>
+                                    <br>
+                                    <p class="negrita">608,192.00</p>
+                                </div>
+                                <div class="col-md-2 col-xs-12 b-r"> <span class="text-muted">Val.Dlls</span>
+                                    <br>
+                                    <p class="negrita">30,465.05</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <h4>Impuestos</h4>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-3 col-xs-12 b-r"> <span class="text-muted">PREV</span>
+                                    <br>
+                                    <p class="negrita">302.00</p>
+                                </div>
+                                <div class="col-md-3 col-xs-12 b-r"> <span class="text-muted">IGI</span>
+                                    <br>
+                                    <p class="negrita">27,302.00</p>
+                                </div>
+                                <div class="col-md-3 col-xs-12 b-r"> <span class="text-muted">DTA</span>
+                                    <br>
+                                    <p class="negrita">4,866.00</p>
+                                </div>
+                                <div class="col-md-3 col-xs-12 b-r"> <span class="text-muted">IVA</span>
+                                    <br>
+                                    <p class="negrita">102,456.00</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2 col-xs-12 b-r"> <span class="text-muted">VAL.SEG.</span>
+                                    <br>
+                                    <p class="negrita">0.00</p>
+                                </div>
+                                <div class="col-md-3 col-xs-12 b-r"> <span class="text-muted">SEGUROS</span>
+                                    <br>
+                                    <p class="negrita">0.00</p>
+                                </div>
+                                <div class="col-md-2 col-xs-12 b-r"> <span class="text-muted">FLETES</span>
+                                    <br>
+                                    <p class="negrita">0.00</p>
+                                </div>
+                                <div class="col-md-3 col-xs-12 b-r"> <span class="text-muted">EMBALAJES</span>
+                                    <br>
+                                    <p class="negrita">0.00</p>
+                                </div>
+                                <div class="col-md-2 col-xs-12 b-r"> <span class="text-muted">OTROS</span>
+                                    <br>
+                                    <p class="negrita">0.00</p>
+                                </div>
+                            </div>
+
+                            <h4>Total de impuestos: <strong>134,926.00</strong></h4>
+
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="tclie" role="tabpanel">
+                        <div class="ribbon-wrapper">
+                            <div class="ribbon ribbon-bookmark ribbon-info">Cliente </div>
+                            <div class="row">
+                                <div class="col-md-12 col-xs-12 b-r"> <span class="text-muted">RFC</span>
+                                    <br>
+                                    <p class="negrita">GDE2012211D231</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-xs-6 b-r"> <span class="text-muted">Nombre</span>
+                                    <br>
+                                    <p class="negrita">Grupo de empresas conocidas, S. DE R.L. DE C.V.</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-xs-6 b-r"> <span class="text-muted">Domicilio</span>
+                                    <br>
+                                    <p class="negrita">Av. Principal No. 12 int-1 Col. La conocida, Ciudad de México C.P. 21134</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="tfact" role="tabpanel">
+
+                        <div class="ribbon-wrapper">
+                            <div class="ribbon ribbon-bookmark ribbon-info">Facturas relacionadas</div>
+                            <div class="row" *ngFor="let factura of facturas">
+                                <div class="col-md-1 col-xs-12 b-r"> <span class="text-muted">Fac.</span>
+                                    <br>
+                                    <p class="negrita">{{factura.cons}}</p>
+                                </div>
+                                <div class="col-md-2 col-xs-12 b-r"> <span class="text-muted">Número</span>
+                                    <br>
+                                    <p class="negrita">{{factura.numero}}</p>
+                                </div>
+                                <div class="col-md-2 col-xs-6 b-r"> <span class="text-muted">Fecha</span>
+                                    <br>
+                                    <p class="negrita">{{factura.fecha}}</p>
+                                </div>
+
+                                <div class="col-md-1 col-xs-6 b-r"> <span class="text-muted">Ico.</span>
+                                    <br>
+                                    <p class="negrita">{{factura.icoter}}</p>
+                                </div>
+                                <div class="col-md-2 col-xs-6 b-r"> <span class="text-muted">Moneda</span>
+                                    <br>
+                                    <p class="negrita">{{factura.moneda}} {{factura.tipcam | number}}</p>
+                                </div>
+                                <div class="col-md-2 col-xs-6 b-r"> <span class="text-muted">Val.Ext.</span>
+                                    <br>
+                                    <p class="negrita">{{factura.valext | currency}}</p>
+                                </div>
+                                <div class="col-md-2 col-xs-6 b-r"> <span class="text-muted">Val.Dlls.</span>
+                                    <br>
+                                    <p class="negrita">{{factura.valdll | currency}}</p>
+                                </div>
+                                <div class="col-md-12 col-xs-6 b-r"> <span class="text-muted">Proveedor</span>
+                                    <br>
+                                    <p class="negrita">{{factura.prove}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="tpart" role="tabpanel">
+
+                        <div class="ribbon-wrapper">
+                            <div class="ribbon ribbon-bookmark ribbon-info">Partidas de la referencia ({{partidas.length}})</div>
+
+                            <div class="table-refe">
+
+                                <div class="modal-dialog modal-lg" *ngFor="let partida of partidas">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <div class="col-md-2 col-xs-12 ">
+                                                <span class="text-muted">Partida: </span><span class="negrita">{{partida.parti}}</span>
+                                            </div>
+                                            <div class="col-md-4 col-xs-6">
+                                                <span class="text-muted">Fracción: </span><span class="negrita">{{partida.fracc}}</span>
+                                            </div>
+                                            <div class="col-md-3 col-xs-6 b-r"> </div>
+                                            <div class="col-md-3 col-xs-6 b-r">
+                                                <span class="text-muted">Val.Adu. </span><span class="negrita">{{partida.valadua | currency}}</span></div>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h4>{{partida.descrip}}</h4>
+                                            <div class="row">
+                                                <div class="col-md-1 col-xs-6 b-r"> <span class="text-muted">Vinc.</span>
+                                                    <br>
+                                                    <p class="negrita">{{partida.vincu}}</p>
+                                                </div>
+                                                <div class="col-md-1 col-xs-6 b-r"> <span class="text-muted">Valo.</span>
+                                                    <br>
+                                                    <p class="negrita">{{partida.valor}}</p>
+                                                </div>
+                                                <div class="col-md-1 col-xs-6 b-r"> <span class="text-muted">Pai.Ori.</span>
+                                                    <br>
+                                                    <p class="negrita">{{partida.paiori}}</p>
+                                                </div>
+                                                <div class="col-md-1 col-xs-6 b-r"> <span class="text-muted">Pai.Ven.</span>
+                                                    <br>
+                                                    <p class="negrita">{{partida.paiven}}</p>
+                                                </div>
+                                                <div class="col-md-1 col-xs-6 b-r"> <span class="text-muted">Uni.Tar.</span>
+                                                    <br>
+                                                    <p class="negrita">{{partida.unitar}}</p>
+                                                </div>
+                                                <div class="col-md-1 col-xs-6 b-r"> <span class="text-muted">Can.Tar</span>
+                                                    <br>
+                                                    <p class="negrita">{{partida.cantar}}</p>
+                                                </div>
+                                                <div class="col-md-1 col-xs-12 b-r"> <span class="text-muted">Unid.</span>
+                                                    <br>
+                                                    <p class="negrita">{{partida.unidad}}</p>
+                                                </div>
+                                                <div class="col-md-1 col-xs-6 b-r"> <span class="text-muted">Cant.</span>
+                                                    <br>
+                                                    <p class="negrita">{{partida.cantid}}</p>
+                                                </div>
+                                                <div class="col-md-2 col-xs-6 b-r"> <span class="text-muted">Unit.</span>
+                                                    <br>
+                                                    <p class="negrita">{{partida.unitario}}</p>
+                                                </div>
+                                                <div class="col-md-1 col-xs-12 b-r"> <span class="text-muted">TLC</span>
+                                                    <br>
+                                                    <p class="negrita">{{partida.tlc}}</p>
+                                                </div>
+                                                <div class="col-md-1 col-xs-6 b-r"> <span class="text-muted">COMP.</span>
+                                                    <br>
+                                                    <p class="negrita">{{partida.comp}}</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" id="tetap" role="tabpanel">
+                        <div class="ribbon-wrapper">
+                            <div class="ribbon ribbon-bookmark ribbon-info">Etapas de la referencia</div>
+                            <div class="card">
+                                <div class="card-body table-refe">
+
+
+                                    <div class="profiletimeline ">
+                                        <div class="sl-item" *ngFor="let etapa of etapas">
+                                            <div class="sl-left"><img src="assets/images/users/check.jpg" alt="user" class="img-circle" /></div>
+                                            <div class="sl-right">
+                                                <div class="timeline-panel">
+                                                    <div class="timeline-heading">
+                                                        <h4 class="timeline-title">{{etapa.etapa}}</h4>
+                                                        <p><strong class="text-muted"><i class="fa fa-clock-o"></i> {{etapa.fecha}} {{etapa.hora}}</strong> </p>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p>Descripción en caso de requerirla...</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="tab-pane" id="tobse" role="tabpanel">
+                        <div class="ribbon-wrapper">
+                            <div class="ribbon ribbon-bookmark ribbon-info">Observaciones de la Referencia: <strong>{{referencia}}</strong></div>
+                            <div class="card-body table-refe">
+                                <p>
+                                    IMPORTADOR: GRUPO DE SERVICIOS ADUANALES NACIONALES S. DE R.L. DE C.V. -ANEXOS CONFORME AL ARTICULO 36A FRACCION I DE LA LEY ADUANERA Y DE LAS REGLAS GENERALES DE COMERCIO EXTERIOR 3.1.7 -SE ANEXA BL, FACTURA COMERCIAL, LISTA DE EMPAQUE -IMPORTACION AL
+                                    AMPARO DEL ARTICULO 54 DE LA LEY ADUANERA CON INFORMACION Y DOCUMENTOS PROPORCIONADOS POR EL IMPORTADOR.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<!-- </div> -->

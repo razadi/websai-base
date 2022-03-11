@@ -1,0 +1,179 @@
+.footable .pagination li a {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #0275d8;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+}
+
+.footable .pagination li.active a {
+    z-index: 2;
+    color: #fff;
+    background-color: #0275d8;
+    border-color: #0275d8;
+}
+
+.footable .pagination li.disabled a {
+    color: #636c72;
+    pointer-events: none;
+    cursor: not-allowed;
+    background-color: #ffffff;
+    border-color: #ddd;
+}
+
+.footable .pagination li:first-child a {
+    margin-left: 0;
+    border-bottom-left-radius: .25rem;
+    border-top-left-radius: .25rem;
+}
+
+
+/*******************
+ Right side panel
+*******************/
+
+.r-aside {
+    padding-right: 300px;
+}
+
+.right-side-panel {
+    width: 275px;
+    padding: 20px;
+    padding-bottom: 70px;
+    background: #e9edf2;
+    position: absolute;
+    right: 0px;
+    top: 77px;
+    height: calc(100% - 77px);
+    overflow: hidden;
+}
+
+
+/*******************
+ Sales overview Chart
+*******************/
+
+#sales-overview .ct-point {
+    stroke-width: 6px;
+}
+
+#sales-overview .ct-grid {
+    stroke-dasharray: 0px;
+    stroke: rgba(120, 130, 140, 0.13);
+}
+
+#sales-overview .ct-area {
+    fill-opacity: 1;
+}
+
+#sales-overview .ct-series-a .ct-area,
+#sales-overview .ct-series-a .ct-point {
+    fill: #745af2;
+    stroke: #745af2;
+}
+
+#sales-overview .ct-series-b .ct-area,
+#sales-overview .ct-series-b .ct-point {
+    fill: #398bf7;
+    stroke: #398bf7;
+}
+
+#sales-overview .ct-series-c .ct-area,
+#sales-overview .ct-series-c .ct-point {
+    fill: #e9edf2;
+    stroke: #e9edf2;
+}
+
+.website-visitor .ct-series-a .ct-area {
+    fill-opacity: 0.2;
+    fill: url(#gradient);
+}
+
+.website-visitor .ct-series-a .ct-line,
+.website-visitor .ct-series-a .ct-point {
+    stroke: #06d79c;
+    stroke-width: 2px;
+}
+
+.website-visitor .ct-series-b .ct-area {
+    fill: #398bf7;
+    fill-opacity: 0.1;
+}
+
+.website-visitor .ct-series-b .ct-line,
+.website-visitor .ct-series-b .ct-point {
+    stroke: #398bf7;
+    stroke-width: 2px;
+}
+
+.website-visitor .ct-series-a .ct-point,
+.website-visitor .ct-series-b .ct-point {
+    stroke-width: 6px;
+}
+
+.c3-chart-arcs-title {
+    font-size: 26px;
+    font-weight: 600;
+    color: #67757c;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+/*******************
+ Project of the month
+*******************/
+
+.pro-of-month h6 {
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+.grafica-principal {
+    height: 400px;
+}
+
+.grafica-principal-br {
+    height: 320px;
+    width: 100%;
+}
+
+
+/*******************
+ This is for responsive dashboard1 element
+*******************/
+
+@media (max-width: 1023px) {
+    .r-aside {
+        padding-right: 25px;
+    }
+    .right-side-panel {
+        display: none;
+    }
+    .grafica-principal {
+        height: 300%;
+    }
+    .grafica-principal-br {
+        height: 300%;
+    }
+}
+
+@media (max-width: 767px) {
+    .r-aside {
+        padding-right: 15px;
+    }
+    #visitor {
+        text-align: center;
+    }
+    .grafica-principal {
+        height: 150%;
+    }
+    .grafica-principal-br {
+        height: 150%;
+    }
+}
+
+
+/* ********************************* */

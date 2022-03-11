@@ -1,0 +1,214 @@
+<!-- Row -->
+<div class="row">
+
+    <!-- Column -->
+    <div class="col-lg-4 col-xlg-3 col-md-5">
+        <div class="card"> <img class="card-img" src="assets/images/background/socialbg.jpg" alt="Card image">
+            <div class="card-img-overlay card-inverse social-profile d-flex ">
+                <div class="align-self-center"> <img src="assets/images/users/1.jpg" class="img-circle" width="100">
+                    <h4 class="card-title">{{userServ.usuario}}</h4>
+                    <h6 class="card-subtitle">{{userServ.usumail}}</h6>
+                    <p class="text-white">{{usuDesc}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <small class="text-muted">Email </small>
+                <h6>{{userServ.usumail}}</h6>
+                <small class="text-muted p-t-30 db">Telefono</small>
+                <h6>{{userServ.usutele}}</h6>
+                <small class="text-muted p-t-30 db">Dirección</small>
+                <h6>{{userServ.usudire}}</h6>
+                <div class="map-box">
+                    <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d470029.1604841957!2d72.29955005258641!3d23.019996818380896!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e848aba5bd449%3A0x4fcedd11614f6516!2sAhmedabad%2C+Gujarat!5e0!3m2!1sen!2sin!4v1493204785508"
+                        width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.289374440148!2d-99.07436460424744!3d19.44308664047219!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fb8c232adf73%3A0x4b4a5dce8a8d96c4!2sM%C3%A9xico+(Lic.+Benito+Ju%C3%A1rez)%2C+15620+Ciudad+de+M%C3%A9xico%2C+CDMX!5e0!3m2!1ses-419!2smx!4v1542479819962"
+                        width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div> <small class="text-muted p-t-30 db">Redes sociales</small>
+                <br/>
+                <button class="btn btn-circle btn-secondary" (click)="irRedSocial('fb')"><i class="fa fa-facebook"></i></button>
+                <button class="btn btn-circle btn-secondary" (click)="irRedSocial('tw')"><i class="fa fa-twitter"></i></button>
+                <button class="btn btn-circle btn-secondary" (click)="irRedSocial('go')"><i class="fa fa-google"></i></button>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-8 col-xlg-9 col-md-7">
+        <div class="card">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs profile-tab" role="tablist">
+                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Timeline</a> </li>
+                <li class="nav-item"> <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Profile</a> </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div class="tab-pane active" id="home" role="tabpanel">
+                    <div class="card-body" style="height: 850px; overflow: auto;">
+                        <div class="profiletimeline">
+
+                            <div *ngFor="let tline of timeline">
+                                <div class="sl-item" *ngIf="tline.activo">
+                                    <div class="sl-left"> <img src="assets/images/users/1.jpg" alt="user" class="img-circle" /> </div>
+                                    <div class="sl-right">
+                                        <div><span class="sl-date">{{tline.from}} a {{tline.to}}</span>
+                                            <!-- <p>{{tline.actividad}}</p> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="sl-item" *ngIf="!tline.activo">
+                                    <div class="sl-left text-info"> <i class="fa fa-check-circle-o"></i></div>
+                                    <div class="sl-right">
+                                        <div> <span class="sl-date">{{tline.from}} a {{tline.to}}</span>
+                                            <!-- <p>{{tline.actividad}}</p> -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!--second tab-->
+                <div class="tab-pane" id="profile" role="tabpanel">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3 col-xs-6 b-r"> <strong>Nombre</strong>
+                                <br>
+                                <p class="text-muted">{{userServ.usuario}}</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r"> <strong>Telefono</strong>
+                                <br>
+                                <p class="text-muted">{{userServ.usutele}}</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6 b-r"> <strong>Email</strong>
+                                <br>
+                                <p class="text-muted">{{userServ.usumail}}</p>
+                            </div>
+                            <div class="col-md-3 col-xs-6"> <strong>Dirección</strong>
+                                <br>
+                                <p class="text-muted">{{userServ.usudire}}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        <h4 class="m-t-30">Visualiza las siguientes cuentas</h4>
+                        <p class="m-t-30">Descripción que desee a gregar en este punto...</p>
+
+                        <div style="height: 300px; overflow: auto;">
+                            <table class="table table-striped" style="font-size: 0.8em">
+                                <thead>
+                                    <tr>
+                                        <th>Clave</th>
+                                        <th>RFC</th>
+                                        <th>Nombre cliente</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>C0001</td>
+                                        <td>ASD2001233S32</td>
+                                        <td>NOMBRE DEL CLIENTE QUE MONITOREA 1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>C0021</td>
+                                        <td>ASD20123s3S32</td>
+                                        <td>NOMBRE DEL CLIENTE QUE MONITOREA 2</td>
+                                    </tr>
+                                    <tr>
+                                        <td>C0101</td>
+                                        <td>SDFE401233S32</td>
+                                        <td>NOMBRE DEL CLIENTE QUE MONITOREA 3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p>Cerrar descripción</p>
+
+                        <!-- <h4 class="font-medium m-t-30">Skill Set</h4>
+                        <hr>
+                        <h5 class="m-t-30">Wordpress <span class="pull-right">80%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%; height:6px;"> <span class="sr-only">50% Complete</span> </div>
+                        </div>
+                        <h5 class="m-t-30">HTML 5 <span class="pull-right">90%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%; height:6px;"> <span class="sr-only">50% Complete</span> </div>
+                        </div>
+                        <h5 class="m-t-30">jQuery <span class="pull-right">50%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%; height:6px;"> <span class="sr-only">50% Complete</span> </div>
+                        </div>
+                        <h5 class="m-t-30">Photoshop <span class="pull-right">70%</span></h5>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%; height:6px;"> <span class="sr-only">50% Complete</span> </div>
+                        </div> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+</div>
+<!-- Row -->
+<!-- ============================================================== -->
+<!-- End PAge Content -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Right sidebar -->
+<!-- ============================================================== -->
+<!-- .right-sidebar -->
+<div class="right-sidebar">
+    <div class="slimscrollright">
+        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
+        <div class="r-panel-body">
+            <ul id="themecolors" class="m-t-20">
+                <li><b>With Light sidebar</b></li>
+                <li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
+                <li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
+                <li><a href="javascript:void(0)" data-theme="red" class="red-theme">3</a></li>
+                <li><a href="javascript:void(0)" data-theme="blue" class="blue-theme">4</a></li>
+                <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
+                <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
+                <li class="d-block m-t-30"><b>With Dark sidebar</b></li>
+                <li><a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme working">7</a></li>
+                <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a></li>
+                <li><a href="javascript:void(0)" data-theme="red-dark" class="red-dark-theme">9</a></li>
+                <li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme">10</a></li>
+                <li><a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a></li>
+                <li><a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme ">12</a></li>
+            </ul>
+            <ul class="m-t-20 chatonline">
+                <li><b>Chat option</b></li>
+                <li>
+                    <a href="javascript:void(0)"><img src="../assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><img src="../assets/images/users/2.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><img src="../assets/images/users/3.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><img src="../assets/images/users/4.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><img src="../assets/images/users/5.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><img src="../assets/images/users/6.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><img src="../assets/images/users/7.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)"><img src="../assets/images/users/8.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

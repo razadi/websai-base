@@ -1,0 +1,50 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="row">
+
+
+                <div class="col-xlg-12 col-lg-12 col-md-8 bg-light-part b-l">
+                    <div class="card-body">
+                        <!-- <div class="btn-group m-b-10 m-r-10 " role="group" aria-label="Button group with nested dropdown">
+                            <button type="button" class="btn btn-secondary font-18" (click)="onChangeFilter('T')" data-toggle="tooltip" data-placement="top" title="Todos los reportes"><i class="fa fa-star text-info"></i></button>
+                            <button type="button" class="btn btn-secondary font-18" (click)="onChangeFilter('O')" data-toggle="tooltip" data-placement="top" title="De operación"><i class="fa fa-star text-warning"></i></button>
+                            <button type="button" class="btn btn-secondary font-18" (click)="onChangeFilter('F')" data-toggle="tooltip" data-placement="top" title="De finanzas"><i class="fa fa-star text-purple"></i></button>
+                            <button type="button" class="btn btn-secondary font-18" (click)="onChangeFilter('I')" data-toggle="tooltip" data-placement="top" title="De indicadores"><i class="fa fa-star text-danger"></i></button>
+                        </div> -->
+                        <div class="btn-group m-b-10 " role="group">
+                            <button type="button" class="btn btn-success m-r-10 m-b-10" [routerLink]="['/reporteg', 'new']"><i class="mdi mdi-plus font-18"></i> Nuevo reporte</button>
+                        </div>
+                    </div>
+                    <div class="card-body p-t-0">
+                        <div class="card b-all shadow-none" style="height: 600px;">
+                            <div class="inbox-center table-responsive">
+                                <table class="table table-hover no-wrap">
+                                    <tbody>
+                                        <tr class="unread" *ngFor="let repo of repos">
+                                            <!-- <td style="width:40px">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="checkbox0" value="check">
+                                                    <label for="checkbox0"></label>
+                                                </div><span class="label label-info m-r-10">Work</span> 
+                                            </td> -->
+                                            <td style="width:40px" class="hidden-xs-down"><i class="fa fa-star" [ngClass]="{'text-warning': repo.type === 'O', 'text-purple': repo.type === 'F', 'text-danger': repo.type === 'I'}"></i></td>
+                                            <td class="hidden-xs-down font-weight-bold"><a [routerLink]="['/reportev', repo.id]">{{repo.title}}</a></td>
+                                            <td class="max-texts">{{repo.description}}</td>
+                                            <!-- <td class="hidden-xs-down"><i class="fa fa-paperclip"></i></td> -->
+                                            <td class="hidden-xs-down">
+                                                <button type="button" class="btn btn-primary font-14 font-bold" [routerLink]="['/reporteg', repo.id]" data-toggle="tooltip" data-placement="top" title="Modificar reporte"><i class="fa fa-edit"></i></button>
+                                                <button type="button" class="btn btn-danger font-14 font-bold" [routerLink]="['/reporteg', repo.id]" data-toggle="tooltip" data-placement="top" title="Eliminar reporte"><i class="fa fa-times"></i></button>
+                                            </td>
+                                            <td class="text-right">{{repo.created | date:'dd/MM/yyyy'}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

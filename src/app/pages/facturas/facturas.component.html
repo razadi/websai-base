@@ -1,0 +1,256 @@
+<!-- ============================================================== -->
+<!-- Stats box -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-lg-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="m-r-20 align-self-center"><img src="../assets/images/icon/income.png" alt="Income" /></div>
+                    <div class="align-self-center">
+                        <h6 class="text-muted m-t-10 m-b-0">Facturas</h6>
+                        <h2 class="m-t-0">{{facturas}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="m-r-20 align-self-center"><img src="../assets/images/icon/expense.png" alt="Income" /></div>
+                    <div class="align-self-center">
+                        <h6 class="text-muted m-t-10 m-b-0">Pagadas</h6>
+                        <h2 class="m-t-0">{{cobradas}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="m-r-20 align-self-center"><img src="../assets/images/icon/assets.png" alt="Income" /></div>
+                    <div class="align-self-center">
+                        <h6 class="text-muted m-t-10 m-b-0">Por pagar</h6>
+                        <h2 class="m-t-0">{{porcobra}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div class="m-r-20 align-self-center"><img src="../assets/images/icon/staff.png" alt="Income" /></div>
+                    <div class="align-self-center">
+                        <h6 class="text-muted m-t-10 m-b-0">Canceladas</h6>
+                        <h2 class="m-t-0">{{cancelas}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <select class="custom-select pull-right" #selFilter (change)="onChangeFilter(selFilter.value)">
+                    <option value="0" selected>Todas</option>
+                    <option value="PEN">Pendientes</option>
+                    <option value="PAG">Pagadas</option>
+                    <option value="CAN">Canceladas</option>
+                </select>
+                <h4 class="card-title">Facturas <span class="badge badge-info ml-auto">{{facts.length}}</span></h4>
+                <h6 class="card-subtitle">{{gMesActual}} {{gAnoActual}}</h6>
+                <div class="table-responsive" style="height: 300px; overflow: auto;">
+                    <table class="table stylish-table">
+                        <thead>
+                            <tr>
+                                <th style="width:90px;">Estatus</th>
+                                <th>Descripción</th>
+                                <th>Referencia</th>
+                                <th>Importe</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let ref of facts; let i of index">
+                                <td><span class="round" [ngClass]="{'bg-danger': ref.EDO_CUEN === '7', 
+                                                                    'bg-success': ref.EDO_CUEN === '6' || ref.EDO_CUEN === '8'}"><i class="ti-file"></i></span></td>
+                                <td>
+                                    <h6><a [routerLink]="['/cuenta', ref.FOL_FACT]" class="link">Factura {{ref.NUM_SERIE}}-{{ref.FOL_FACT}}</a></h6><small class="text-muted">UUID : {{ref.FACT_UUID}} </small></td>
+                                <td>
+                                    <h5>{{ref.NUM_REFE}}</h5>
+                                </td>
+                                <td>
+                                    <h5>{{ref.TOT_INGRS | currency}}</h5>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ============================================================== -->
+<!-- Sales overview chart -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-lg-6 col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div>
+                        <h3 class="card-title m-b-5"><span class="lstick"></span>Facturas en {{gMesActual}} {{gAnoActual}}</h3>
+                    </div>
+                    <!-- <div class="ml-auto">
+                        <select class="custom-select b-0">
+                                          <option selected="">January 2017</option>
+                                          <option value="1">February 2017</option>
+                                          <option value="2">March 2017</option>
+                                          <option value="3">April 2017</option>
+                                      </select>
+                    </div> -->
+                </div>
+                <div class="p-relative" style="height:360px;">
+                    <app-grafica-line [chartDataSet]="lineChartData" [chartLabels]="lineChartLabels" [chartOptions]="lineChartOptions" [chartColors]="lineChartColors" [chartLegend]="lineChartLegend"></app-grafica-line>
+                </div>
+
+                <!-- <div class="stats-bar">
+                    <div class="row text-center">
+                        <div class="col-lg-6 col-md-6">
+                            <div class="p-20">
+                                <h6 class="m-b-0">Facturas</h6>
+                                <h3 class="m-b-0">{{facturas}}</h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="p-20">
+                                <h6 class="m-b-0">En este mes</h6>
+                                <h3 class="m-b-0">$7,589</h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6">
+                            <div class="p-20">
+                                <h6 class="m-b-0">Importe</h6>
+                                <h3 class="m-b-0">{{valfacturas | currency}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="d-flex">
+                    <div>
+                        <h3 class="card-title m-b-5"><span class="lstick"></span>Facturas en el año {{gAnoActual}}</h3>
+                    </div>
+                    <!-- <div class="ml-auto">
+                        <select class="custom-select b-0">
+                                          <option selected="">January 2017</option>
+                                          <option value="1">February 2017</option>
+                                          <option value="2">March 2017</option>
+                                          <option value="3">April 2017</option>
+                                      </select>
+                    </div> -->
+                </div>
+                <div class="p-relative" style="height:360px;">
+                    <app-grafica-bar [chartLabels]="barChartLabels" [chartData]="barChartData" [chartOptions]="barChartOptions" [chartColors]="barChartColors"></app-grafica-bar>
+                </div>
+                <!-- <div class="stats-bar">
+                    <div class="row text-center">
+                        <div class="col-lg-4 col-md-4">
+                            <div class="p-20">
+                                <h6 class="m-b-0">Facturas</h6>
+                                <h3 class="m-b-0">{{facturasAno}}</h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="p-20">
+                                <h6 class="m-b-0">En el mes</h6>
+                                <h3 class="m-b-0">{{facturas}}</h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            <div class="p-20">
+                                <h6 class="m-b-0">Canceladas en el mes</h6>
+                                <h3 class="m-b-0">{{cancelas}}</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="row">
+                <!-- Column -->
+                <div class="col-lg-5 col-xlg-3 col-md-6">
+                    <div class="card-body">
+                        <h3 class="card-title m-b-30">Facturación</h3>
+                        <font class="m-t-40 display-6">{{facturas}}</font>
+                        <h6 class="card-subtitle m-b-30">Generadas en el mes de {{gMesActual}} del {{gAnoActual}}</h6>
+                        <!-- <a href="javascript:void(0)" class="m-r-20"><img src="../assets/images/users/1.jpg" class="img-circle" width="50" /></a>
+                        <a href="javascript:void(0)" class="m-r-20"><img src="../assets/images/users/2.jpg" class="img-circle" width="50" /></a>
+                        <a href="javascript:void(0)" class="m-r-20"><img src="../assets/images/users/3.jpg" class="img-circle" width="50" /></a>
+                        <a href="javascript:void(0)" class="m-r-20"><img src="../assets/images/users/4.jpg" class="img-circle" width="50" /></a> -->
+                        <div class="clearfix"></div>
+                        <!-- <button type="button" class="btn btn-success m-t-40">Read reviews</button> -->
+                    </div>
+                </div>
+                <!-- Column -->
+                <div class="col-lg-7 col-xlg-9 col-md-6 b-l p-l-0">
+                    <ul class="product-review">
+                        <li>
+                            <font class="text-muted display-5"><i class="mdi mdi-emoticon-cool"></i></font> <span>
+                              <h3 class="card-title">Facturas pagadas</h3>
+                              <h6 class="card-subtitle">{{cobradas}} facturas</h6> 
+                          </span>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="height:6px;" [style.width]="pcobradas" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <font class="text-muted display-5"><i class="mdi mdi-emoticon-neutral"></i></font> <span>
+                              <h3 class="card-title">Facturas por pagar</h3>
+                              <h6 class="card-subtitle">{{porcobra}} facturas</h6> 
+                          </span>
+                            <div class="progress">
+                                <div class="progress-bar " role="progressbar" style="height:6px;" [style.width]="pporcobra" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <font class="text-muted display-5"><i class="mdi mdi-emoticon-sad"></i></font> <span>
+                              <h3 class="card-title">Facturas canceladas</h3>
+                              <h6 class="card-subtitle">{{cancelas}} facturas</h6> 
+                          </span>
+                            <div class="progress">
+                                <div class="progress-bar bg-danger" role="progressbar" style="height:6px;" [style.width]="pcancelas" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+                <!-- Column -->
+            </div>
+        </div>
+    </div>
+</div>

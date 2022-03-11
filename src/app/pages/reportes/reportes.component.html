@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+
+                <div class="d-flex">
+                    <h4 class="card-title">{{title}} <span class="badge badge-secondary">{{referencias.length}} regs.</span></h4>
+                    <!-- <div class="ml-auto form-material ">
+                        <button class="btn btn-info" [disabled]="referencias.length <= 0">Exportar</button>
+                    </div> -->
+                    <div class="ml-auto form-material input-group w-dr">
+                        <input type="text" class="form-control input-daterange-datepicker" value="01/01/2015 - 01/31/2015" #rango>
+                        <button class="btn input-group-addon" (click)="onChange(rango.value, tipo)"><i class="icon-magnifier"></i></button>
+                        <button class="btn input-group-addon btn-info text-white" (click)="onClick()" [disabled]="referencias.length <= 0"><i class="fa fa-file-excel-o"></i></button>
+                    </div>
+                    <!-- </div> -->
+                </div>
+
+                <div class="table-responsive" style="height: 600px; overflow: auto">
+
+                    <table class="table-hover table">
+                        <thead>
+                            <tr>
+                                <th>Referencia</th>
+                                <th>
+                                    <div style="width: 110px;">Pedimento</div>
+                                </th>
+                                <th>Opera.</th>
+                                <th>
+                                    <div style="width: 350px;">Cliente</div>
+                                </th>
+                                <th>Cve.</th>
+                                <th>Pago</th>
+                                <th>Edo.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let refe of referencias">
+                                <td><a [routerLink]="['/pedime', refe.NUM_REFE]">{{refe.NUM_REFE}}</a></td>
+                                <td>{{refe.ADU_DESP}} {{refe.NUM_PEDI}}</td>
+                                <td>{{refe.OPERA}}</td>
+                                <td>{{refe.NOM_IMP}}</td>
+                                <td>{{refe.CVE_PEDI}}</td>
+                                <td>{{refe.FEC_PAGO}}</td>
+                                <td>{{refe.EDOR}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,204 @@
+<div class="r-aside">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <h4 class="card-title"><span class="lstick"></span>Comparación de embarques del 2017 vs. 2018</h4>
+                        <ul class="list-inline m-b-0 ml-auto">
+                            <li>
+                                <h6 class="color2"><i class="fa fa-circle font-10 m-r-10 "></i>Embarques en el 2017</h6>
+                            </li>
+                            <li>
+                                <h6 class="color1"><i class="fa fa-circle font-10 m-r-10"></i>Embarques en el 2018</h6>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="website-visitor p-relative grafica-principal-br">
+                        <app-grafica-bar [chartLabels]="barChartLabels" [chartData]="barChartData" [chartOptions]="barChartOptions" [chartColors]="barChartColors"></app-grafica-bar>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- hago un recorrido -->
+        <!-- <div class="col-lg-3" *ngFor="let graph of duntChartElements; index as i">
+            <h4 class="card-title text-center">{{duntChartLabels1[i]}} <i class="mdi mdi-arrow-down-bold down">{{duntChartPercents[i]}}%</i></h4>
+            <div [id]="graph"></div>
+        </div> -->
+
+        <div class="col-lg-2 dona">
+            <h4 class="card-title text-center">{{graphsServ.monthLabelsFull[0]}}
+                <i class="mdi mdi-arrow-down-bold down" *ngIf="duntChartPercents[0]<0">{{duntChartPercents[0]}}%</i>
+                <i class="mdi mdi-arrow-up-bold up" *ngIf="duntChartPercents[0]>0">{{duntChartPercents[0]}}%</i></h4>
+            <div id="chartD1"></div>
+        </div>
+        <div class="col-lg-2 dona">
+            <h4 class="card-title text-center">{{graphsServ.monthLabelsFull[1]}}
+                <i class="mdi mdi-arrow-down-bold down" *ngIf="duntChartPercents[1]<0">{{duntChartPercents[1]}}%</i>
+                <i class="mdi mdi-arrow-up-bold up" *ngIf="duntChartPercents[1]>0">{{duntChartPercents[1]}}%</i></h4>
+            <div id="chartD2"></div>
+        </div>
+        <div class="col-lg-2 dona">
+            <h4 class="card-title text-center">{{graphsServ.monthLabelsFull[2]}}
+                <i class="mdi mdi-arrow-down-bold down" *ngIf="duntChartPercents[2]<0">{{duntChartPercents[2]}}%</i>
+                <i class="mdi mdi-arrow-up-bold up" *ngIf="duntChartPercents[2]>0">{{duntChartPercents[2]}}%</i></h4>
+            <div id="chartD3"></div>
+        </div>
+        <div class="col-lg-2 dona">
+            <h4 class="card-title text-center">{{graphsServ.monthLabelsFull[3]}}
+                <i class="mdi mdi-arrow-down-bold down" *ngIf="duntChartPercents[3]<0">{{duntChartPercents[3]}}%</i>
+                <i class="mdi mdi-arrow-up-bold up" *ngIf="duntChartPercents[3]>0">{{duntChartPercents[3]}}%</i></h4>
+            <div id="chartD4"></div>
+        </div>
+
+        <div class="col-lg-2 dona">
+            <h4 class="card-title text-center">{{graphsServ.monthLabelsFull[4]}}
+                <i class="mdi mdi-arrow-down-bold down" *ngIf="duntChartPercents[4]<0">{{duntChartPercents[4]}}%</i>
+                <i class="mdi mdi-arrow-up-bold up" *ngIf="duntChartPercents[4]>0">{{duntChartPercents[4]}}%</i></h4>
+            <div id="chartD5"></div>
+        </div>
+        <div class="col-lg-2 dona">
+            <h4 class="card-title text-center">{{graphsServ.monthLabelsFull[5]}}
+                <i class="mdi mdi-arrow-down-bold down" *ngIf="duntChartPercents[5]<0">{{duntChartPercents[5]}}%</i>
+                <i class="mdi mdi-arrow-up-bold up" *ngIf="duntChartPercents[5]>0">{{duntChartPercents[5]}}%</i></h4>
+            <div id="chartD6"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-2 dona">
+            <h4 class="card-title text-center">{{graphsServ.monthLabelsFull[6]}}
+                <i class="mdi mdi-arrow-down-bold down" *ngIf="duntChartPercents[6]<0">{{duntChartPercents[6]}}%</i>
+                <i class="mdi mdi-arrow-up-bold up" *ngIf="duntChartPercents[6]>0">{{duntChartPercents[6]}}%</i></h4>
+            <div id="chartD7"></div>
+        </div>
+
+        <div class="col-lg-2 dona">
+            <h4 class="card-title text-center">{{graphsServ.monthLabelsFull[7]}}
+                <i class="mdi mdi-arrow-down-bold down" *ngIf="duntChartPercents[7]<0">{{duntChartPercents[7]}}%</i>
+                <i class="mdi mdi-arrow-up-bold up" *ngIf="duntChartPercents[7]>0">{{duntChartPercents[7]}}%</i></h4>
+            <div id="chartD8"></div>
+        </div>
+
+        <div class="col-lg-2 dona">
+            <h4 class="card-title text-center">{{graphsServ.monthLabelsFull[8]}}
+                <i class="mdi mdi-arrow-down-bold down" *ngIf="duntChartPercents[8]<0">{{duntChartPercents[8]}}%</i>
+                <i class="mdi mdi-arrow-up-bold up" *ngIf="duntChartPercents[8]>0">{{duntChartPercents[8]}}%</i></h4>
+            <div id="chartD9"></div>
+        </div>
+        <div class="col-lg-2 dona">
+            <h4 class="card-title text-center">{{graphsServ.monthLabelsFull[9]}}
+                <i class="mdi mdi-arrow-down-bold down" *ngIf="duntChartPercents[9]<0">{{duntChartPercents[9]}}%</i>
+                <i class="mdi mdi-arrow-up-bold up" *ngIf="duntChartPercents[9]>0">{{duntChartPercents[9]}}%</i></h4>
+            <div id="chartD10"></div>
+        </div>
+        <div class="col-lg-2 dona">
+            <h4 class="card-title text-center">{{graphsServ.monthLabelsFull[10]}}
+                <i class="mdi mdi-arrow-down-bold down" *ngIf="duntChartPercents[10]<0">{{duntChartPercents[10]}}%</i>
+                <i class="mdi mdi-arrow-up-bold up" *ngIf="duntChartPercents[10]>0">{{duntChartPercents[10]}}%</i></h4>
+            <div id="chartD11"></div>
+        </div>
+        <div class="col-lg-2 dona">
+            <h4 class="card-title text-center">{{graphsServ.monthLabelsFull[11]}}
+                <i class="mdi mdi-arrow-down-bold down" *ngIf="duntChartPercents[11]<0">{{duntChartPercents[11]}}%</i>
+                <i class="mdi mdi-arrow-up-bold up" *ngIf="duntChartPercents[11]>0">{{duntChartPercents[11]}}%</i></h4>
+            <div id="chartD12"></div>
+        </div>
+    </div>
+
+    <!-- <div class="col-lg-3">
+            <h4 class="card-title text-center">Enero <i class="mdi mdi-arrow-down-bold down" [ngClass]="{'up': duntChartPercents[0]>0 }">{{duntChartPercents[0]}}%</i></h4>
+            <div id="chartD1"></div>
+        </div>
+        <div class="col-lg-3">
+            <h4 class="card-title text-center">Febrero <i class="mdi mdi-arrow-down-bold down" [ngClass]="{'up': duntChartPercents[1]>0 }">{{duntChartPercents[1]}}%</i></h4>
+            <div id="chartD2"></div>
+        </div>
+        <div class="col-lg-3">
+            <h4 class="card-title text-center">Marzo <i class="mdi mdi-arrow-down-bold down" [ngClass]="{'up': duntChartPercents[2]>0 }">{{duntChartPercents[2]}}%</i></h4>
+            <div id="chartD3"></div>
+        </div>
+        <div class="col-lg-3">
+            <h4 class="card-title text-center">Abril <i class="mdi mdi-arrow-down-bold down" [ngClass]="{'up': duntChartPercents[3]>0 }">{{duntChartPercents[3]}}%</i></h4>
+            <div id="chartD4"></div>
+        </div> -->
+    <!-- <div class="col-lg-4">
+          <div class="card">
+              <div class="card-body">
+                  <h4 class="card-title"><span class="lstick"></span>Operación de Embarques 2018</h4>
+                  <div>
+                      <app-grafica-dona [chartLabels]="doughnutChartLabels1" [chartData]="doughnutChartData1" [chartOptions]="doughnutChartOptions" [chartColors]="doughnutChartColors1"></app-grafica-dona>
+                  </div>
+                  <table class="table vm font-14">
+                      <tr>
+                          <td class="b-0">Impor.</td>
+                          <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[0].impos}}</td>
+                          <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[0].pimpo}}%</td>
+                      </tr>
+                      <tr>
+                          <td>Expor.</td>
+                          <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[0].expos}}</td>
+                          <td class="text-right font-medium">{{graphsServ.dataGrafEmbA[0].pexpo}}%</td>
+                      </tr>
+                  </table>
+              </div>
+          </div>
+      </div> -->
+
+    <!-- <div class="col-lg-4">
+          <div class="card">
+              <div class="card-body">
+                  <h4 class="card-title"><span class="lstick"></span>Embarques por aduana 2018</h4>
+                  <div>
+                      <app-grafica-dona [chartLabels]="doughnutChartLabels2" [chartData]="doughnutChartData2" [chartOptions]="doughnutChartOptions" [chartColors]="doughnutChartColors2"></app-grafica-dona>
+                  </div>
+                  <table class="table vm font-14">
+                      <tr>
+                          <td class="b-0">AICM (470)</td>
+                          <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[1].aicm}}</td>
+                          <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[1].paicm}}%</td>
+                      </tr>
+                      <tr>
+                          <td>TOL (650)</td>
+                          <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[1].tol}}</td>
+                          <td class="text-right font-medium">{{graphsServ.dataGrafEmbA[1].ptol}}%</td>
+                      </tr>
+                      <tr>
+                          <td>MZN (160)</td>
+                          <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[1].mzn}}</td>
+                          <td class="text-right font-medium">{{graphsServ.dataGrafEmbA[1].pmzn}}%</td>
+                      </tr>
+                  </table>
+              </div>
+          </div>
+      </div> -->
+
+    <!-- <div class="col-lg-4">
+          <div class="card">
+              <div class="card-body">
+                  <h4 class="card-title"><span class="lstick"></span>Tipos de Embarques 2018</h4>
+                  <div>
+                      <app-grafica-dona [chartLabels]="doughnutChartLabels3" [chartData]="doughnutChartData3" [chartOptions]="doughnutChartOptions" [chartColors]="doughnutChartColors3"></app-grafica-dona>
+                  </div>
+                  <table class="table vm font-14">
+                      <tr>
+                          <td class="b-0">Normales</td>
+                          <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[2].norma}}</td>
+                          <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[2].pnorma}}%</td>
+                      </tr>
+                      <tr>
+                          <td>Rectif.</td>
+                          <td class="text-right font-medium b-0">{{graphsServ.dataGrafEmbA[2].recti}}</td>
+                          <td class="text-right font-medium">{{graphsServ.dataGrafEmbA[2].precti}}%</td>
+                      </tr>
+                  </table>
+              </div>
+          </div>
+      </div> -->
+    <!-- </div> -->
+    <div class="row">
+
+    </div>
+</div>

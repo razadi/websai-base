@@ -1,0 +1,204 @@
+.card {
+    padding: 1px;
+}
+
+.tblPedi {
+    border: 1px solid #999;
+    color: #000;
+    font-size: 0.8em;
+    overflow: hidden;
+}
+
+.tblTituleGris {
+    background-color: #CCCCCC;
+    font-weight: bold;
+}
+
+.tblBorderAll {
+    border: 1px solid #999;
+}
+
+.tblBorderLRB {
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: #999;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #999;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #999;
+}
+
+.tblBorderLB {
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: #999;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #999;
+}
+
+.tblBorderRB {
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #999;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #999;
+}
+
+.tblBorderB {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #999;
+}
+
+.tblBorderL {
+    border-left-width: 1px;
+    border-left-style: solid;
+    border-left-color: #999;
+}
+
+.tblBorderR {
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #999;
+}
+
+.tblMarginL {
+    padding-left: 10px;
+}
+
+.tblMarginR {
+    padding-right: 10px;
+}
+
+.tblFont06 {
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.tblFontn {
+    font-weight: 500;
+}
+
+.tblFontPago {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7em;
+    /* line-height: 99%; */
+    /* font-weight: bold; */
+}
+
+.w900 {
+    width: 900px;
+}
+
+.w80p {
+    width: 80%;
+}
+
+.w20p {
+    width: 17%;
+}
+
+
+/* #content {
+    background-color: #FFF;
+} */
+
+
+/*
+.tabla {
+    border: 1px solid #70777D;
+    background-color: #fff;
+}
+
+.tablaW {
+    border: 1px solid #70777D;
+    background-color: #FFF;
+}
+
+.tblFont {
+    color: #333;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.tblFontn {
+    color: #333;
+    font-size: 9px;
+}
+ 
+.tblPedi {
+    border: 1px solid #999;
+    background-color: #FFF;
+}
+
+.tblPedi1 {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: #999;
+    width: 900px;
+    background-color: #fff;
+}
+
+.gris {
+    background-color: #CCCCCC;
+    font-weight: bold;
+}
+
+.tblPedi2 {
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-right-color: #999;
+    border-bottom-color: #999;
+}
+
+.tblPedi3 {
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-right-color: #999;
+}
+
+.tdw-10 {
+    width: 10%;
+}
+
+.tdw-20 {
+    width: 20%;
+}
+
+.tdw-30 {
+    width: 30%;
+}
+
+.tdw-40 {
+    width: 40%;
+}
+
+.tdw-50 {
+    width: 50%;
+}
+
+.tdw-60 {
+    width: 60%;
+}
+
+.tdw-70 {
+    width: 70%;
+}
+
+.tdw-80 {
+    width: 80%;
+}
+
+.tdw-90 {
+    width: 90%;
+}
+
+.tdw-100 {
+    width: 100%;
+} */

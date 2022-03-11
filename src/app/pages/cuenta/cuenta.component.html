@@ -1,0 +1,226 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="alert" [ngClass]="{'alert-danger': fact.EDO_CUEN === '7', 
+        'alert-success': fact.EDO_CUEN === '6' || fact.EDO_CUEN === '8',
+        'alert-info': fact.EDO_CUEN === '4'}">
+            <i class="ti-file"></i> {{estado}}
+            <button type="button" class="close" [routerLink]="['/facturas']"> <span aria-hidden="true">&times;</span> </button>
+        </div>
+
+        <div class="card card-body printableArea">
+            <h4><b class="text-info">FACTURA {{serie}}-{{folio}}</b> <span class="pull-right">Folio Fiscal (UUID): {{factura[0].folfis}}</span></h4>
+            <hr>
+            <div class="row">
+                <div class="col-md-7 text-left">
+                    <div class="clearfix font-bold text-info">Emisor</div>
+                    <hr class="menos-5 text-info">
+                    <div class="pull-left">
+                        <address>
+                            <span class="font-bold">{{factura[0].eminam}}</span>
+                            <p class="text-muted m-l-5">RFC: <b>{{factura[0].emirfc}}</b>
+                                <br/> Régimen Fiscal: {{factura[0].emireg}}</p>
+                        </address>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="clearfix font-bold text-info">Receptor</div>
+                    <hr class="menos-5 text-info">
+                    <div class="pull-left">
+                        <address>
+                            <span class="font-bold">{{factura[0].recnam}}</span>
+                            <p class="text-muted m-l-5">RFC: <b>{{factura[0].recrfc}}</b>
+                              <br/> C.P.: {{factura[0].reccop}} 
+                              <br/> Uso CFDI: {{factura[0].recuso}}</p>
+                        </address>
+                    </div>
+                </div>
+                <div class="col-md-5 text-center">
+                    <div class="clearfix font-bold text-info">CFDI</div>
+                    <hr class="menos-5 text-info">
+                    <div class="pull-left text-left">
+                        <div class="row">
+                            <div class="col-4">
+                                <p>Folio Interno
+                                    <br/> Fecha Emisión
+                                    <br/> Certificación
+                                    <br/> Expedido en
+                                    <br/> Comprobante
+                                    <br/> Forma pago </p>
+                            </div>
+                            <div class="col-8">
+                                <p>{{serie}}-{{folio}}
+                                    <br/>{{factura[0].fecemi}}
+                                    <br/>{{factura[0].certif}}
+                                    <br/>{{factura[0].lugexp}}
+                                    <br/>{{factura[0].tipcom}}
+                                    <br/>{{factura[0].forpag}}
+                                </p>
+                            </div>
+                            <div class="col-12">
+                                <p>Método pago: {{factura[0].metpag}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-12 text-center">
+                    <div class="clearfix font-bold text-info">Datos del embarque</div>
+                    <hr class="menos-5 text-info">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <div class="table-responsive text-left" style="clear: both;">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>Referencia</td>
+                                            <td>{{factura[0].numref}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Pedimento</td>
+                                            <td>{{factura[0].numped}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>T.Cambio</td>
+                                            <td>{{factura[0].tipcam}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>G.Master</td>
+                                            <td>{{factura[0].guimas}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>G.House</td>
+                                            <td>{{factura[0].guihou}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Peso bruto</td>
+                                            <td>{{factura[0].pesbru | number}}</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                        <div class="col-md-5">
+                            <div class="table-responsive text-left" style="clear: both;">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td>Bultos</td>
+                                            <td>{{factura[0].numbul}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mercancia</td>
+                                            <td>{{factura[0].desmer}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Proveedor</td>
+                                            <td>{{factura[0].pronam}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Facturas</td>
+                                            <td>{{factura[0].numfac}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Valor aduana</td>
+                                            <td>{{factura[0].valadu | number:'0.2'}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Contenedor (es)</td>
+                                            <td>{{factura[0].numcon}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="clearfix font-bold text-info">Conceptos</div>
+                    <hr class="menos-5 text-info">
+                    <div class="table-responsive " style="clear: both;">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">ClaveProdServ</th>
+                                    <th class="text-right">Cant.</th>
+                                    <th>Unidad</th>
+                                    <th>Descripción</th>
+                                    <th class="text-right">Unit.</th>
+                                    <th class="text-right">Importe</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let cpto of factura[0].ceptos">
+                                    <td class="text-center">{{cpto.CLAVE}}</td>
+                                    <td class="text-right">{{cpto.CANT}}</td>
+                                    <td>{{cpto.UNIDAD}}</td>
+                                    <td>{{cpto.DESCRIP}}</td>
+                                    <td class="text-right">{{cpto.UNITA | number:'0.2'}}</td>
+                                    <td class="text-right">{{cpto.IMPO | number:'0.2'}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr class="menos-5">
+                    <div class="pull-right text-right">
+                        <p>Sub Total:&nbsp;&nbsp;&nbsp; {{factura[0].subtot | number:'0.2'}} &nbsp;&nbsp;</p>
+                        <p>IVA (16%):&nbsp;&nbsp;&nbsp; {{factura[0].valiva | number:'0.2'}} &nbsp;&nbsp;</p>
+                        <hr class="menos-5 text-info">
+                        <h4><b class="text-info">Total:</b>&nbsp;&nbsp;&nbsp; {{factura[0].valtot | number:'0.2'}} &nbsp;&nbsp;</h4>
+                    </div>
+
+                    <div class="pull-left text-left">
+                        <br><br><br><br>
+                        <p class="text-muted m-l-5">&nbsp; {{factura[0].lettot}}</p>
+                    </div>
+
+                </div>
+
+                <div class="col-md-12 m-t-40">
+                    <div class="clearfix font-bold text-info">Gastos por terceros</div>
+                    <hr class="menos-5 text-info">
+                    <div class="table-responsive " style="clear: both;">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Concepto</th>
+                                    <th>No. Factura</th>
+                                    <th class="text-right">Importe Cliente</th>
+                                    <th class="text-right">Importe Agencia</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let gtos of factura[0].gastos">
+                                    <td>{{gtos.CONCEPTO}}</td>
+                                    <td>{{gtos.FACTURA}}</td>
+                                    <td class="text-right">{{gtos.IMPDIR | number:'0.2'}}</td>
+                                    <td class="text-right">{{gtos.IMPAA | number:'0.2'}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <hr class="menos-5">
+                    <div class="pull-right text-right">
+                        <p>Total Gastos por Terceros:&nbsp;&nbsp;&nbsp; {{factura[0].totgts | number:'0.2'}} &nbsp;&nbsp;</p>
+                        <p>Total Factura Servicios A.A.:&nbsp;&nbsp;&nbsp; {{factura[0].totfac | number:'0.2'}} &nbsp;&nbsp;</p>
+                        <p>Total Gastos por Terceros y Servicios A.A.:&nbsp;&nbsp;&nbsp; {{factura[0].totall | number:'0.2'}} &nbsp;&nbsp;</p>
+                        <p>Depósito para Gastos por Terceros:&nbsp;&nbsp;&nbsp; {{factura[0].totant | number:'0.2'}} &nbsp;&nbsp;</p>
+                        <hr class="menos-5 text-info">
+                        <h5><b class="text-info">Saldo:</b>&nbsp;&nbsp;&nbsp; {{factura[0].totsal | number:'0.2'}} &nbsp;&nbsp;</h5>
+                    </div>
+
+                    <div class="pull-left text-left">
+                        <br><br><br><br><br><br><br>
+                        <p class="text-muted m-l-5">&nbsp; {{factura[0].letsal}}</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

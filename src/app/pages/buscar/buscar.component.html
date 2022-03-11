@@ -1,0 +1,30 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Resultado de la búsqueda por "{{termino}}"</h4>
+                <h6 class="card-subtitle">se encontraron {{refeServ.buscar.length}} embarque(s) ( 0.10 segundos)</h6>
+                <ul class="search-listing">
+                    <li *ngFor="let result of refeServ.buscar">
+                        <h4><a [routerLink]="['/pedime', result.NUM_REFE]">{{result.NUM_REFE}}</a></h4>
+                        <p>Pedimento: {{result.ADU_DESP}} {{result.PAT_AGEN}} {{result.NUM_PEDI}}; Cliente: {{result.NOM_IMP}}; Fec. Pago: {{result.FEC_PAGO}}</p>
+                    </li>
+
+                </ul>
+                <!-- <nav aria-label="Page navigation example" class="m-t-40">
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+                    </ul>
+                </nav> -->
+            </div>
+        </div>
+    </div>
+</div>

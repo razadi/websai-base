@@ -1,0 +1,74 @@
+<div class="row">
+
+    <div class="col-lg-4 col-xlg-3 col-md-5">
+        <div class="card">
+            <div class="card-body text-center">
+                <div class="m-t-30"> <img src="assets/images/users/5.jpg" class="img-circle" width="150" />
+                    <h4 class="card-title m-t-10"><a [routerLink]="['/pedime', referencia]">{{referencia}}</a></h4>
+                    <h6 class="card-subtitle">{{pedimento}}</h6>
+                    <div class="row text-center justify-content-md-center">
+                        <div class="col-6"><a class="link"><i class="icon-calender"></i><br> <span class="font-medium"> {{fechaentr}}</span></a></div>
+                        <div class="col-6"><a class="link"><i class="icon-badge"></i> <br> <span class="font-medium"> {{operacion}}</span></a></div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <hr>
+            </div>
+            <div class="card-body">
+                <p>Actualmente esta referencia se encuentra detenida por problemas al momento de realizar el reconocimiento previo.</p>
+                <p>Ya se está trabajando para la solución al problema.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-8 col-xlg-9 col-md-7">
+        <div class="card">
+
+            <ul class="nav nav-tabs profile-tab" role="tablist">
+                <li class="nav-item"> <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Procesos</a> </li>
+            </ul>
+
+            <div class="tab-content">
+                <div class="tab-pane active" id="home" role="tabpanel">
+                    <div class="card-body">
+                        <div class="profiletimeline">
+                            <div class="sl-item">
+                                <div class="sl-left"> <img src="assets/images/users/previos.png" alt="user" class="img-circle minimux" /> </div>
+                                <div class="sl-right">
+                                    <div><span class="sl-date">01/Oct/2018 10:23:40 am</span><br>
+                                        <a data-toggle="tooltip" data-placement="top" title="Reconocimiento previo"> <strong>Previo</strong></a>
+                                        <blockquote class="m-t-10">
+                                            Se realizó el reconocimiento previo en la aduana con los siguientes contratiempos:
+                                            <ul>
+                                                <li>La mercancía no veía bien empaquedata</li>
+                                                <li>Los contenedores venían violados</li>
+                                            </ul>
+                                        </blockquote>
+                                        <a [routerLink]="['/previos', referencia]">Ver las imagenes del previo</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="sl-item">
+                                <div class="sl-left"> <img src="assets/images/users/referencia.png" alt="user" class="img-circle minimux" /> </div>
+                                <div class="sl-right">
+                                    <div> <span class="sl-date">01/Oct/2018 09:25:21 am</span><br>
+                                        <a data-toggle="tooltip" data-placement="top" title="Revalidación de guías"> <strong>Revalidación</strong></a>
+                                        <blockquote class="m-t-10">
+                                            Se realizó la revalidación de Guías y el pago de las misma, sin ningún contratiempo.
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

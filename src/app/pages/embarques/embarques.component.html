@@ -1,0 +1,95 @@
+<!-- ============================================================== -->
+<!-- Start Page Content -->
+<!-- ============================================================== -->
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+
+
+                <!-- <div class="m-t-40"> -->
+                <div class="d-flex">
+                    <h4 class="card-title">{{title}} <span class="badge badge-secondary">{{referencias.length}} regs.</span></h4>
+                    <!-- <h6 class="card-subtitle">{{referencias.length}} registros</h6> -->
+                    <div class="ml-auto form-material">
+                        <div class="form-group">
+                            <!--  [(ngModel)]="busqueda" -->
+                            <input #txtBusca type="text" (keyup)="onBuscar(txtBusca.value)" class="form-control" placeholder="Buscar...">
+                        </div>
+                    </div>
+
+                    <!-- </div> -->
+                </div>
+
+                <!-- data-toggle="table" data-height="550" data-mobile-responsive="true" class="table-striped" -->
+                <!-- <tr *ngFor="let refe of referencias; let i of index" id="tr-id-{{i}}" class="tr-class-1">
+                                <td id="td-id-{{i}}" class="td-class-1"><a [routerLink]="['/pedime', refe.NUM_REFE]">{{refe.NUM_REFE}}</a></td> -->
+
+                <!-- <div style="height: 550px; overflow: auto;">
+                    <table class="table table-striped " data-mobile-responsive="true">
+                        <thead>
+                            <tr>
+                                <th>Referncia</th>
+                                <th>Pedimento</th>
+                                <th>Opera.</th>
+                                <th>Cliente</th>
+                                <th>Cve.Doc.</th>
+                                <th>Pago</th>
+                                <th>Edo.</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr *ngFor="let refe of referencias">
+                                <td><a [routerLink]="['/pedime', refe.NUM_REFE]">{{refe.NUM_REFE}}</a></td>
+                                <td>{{refe.ADU_DESP}} {{refe.NUM_PEDI}}</td>
+                                <td>{{refe.OPERA}}</td>
+                                <td>{{refe.NOM_IMP}}</td>
+                                <td>{{refe.CVE_PEDI}}</td>
+                                <td>{{refe.FEC_PAGO}}</td>
+                                <td>{{refe.EDOR}}</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div> -->
+
+
+                <div class="table-responsive">
+
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Referencia</th>
+                                <th>Pedimento</th>
+                                <th>Opera.</th>
+                                <th>Cliente</th>
+                                <th>Cve.</th>
+                                <th>Pago</th>
+                                <th>Edo.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let refe of referencias">
+                                <td><a [routerLink]="['/pedime', refe.NUM_REFE]">{{refe.NUM_REFE}}</a></td>
+                                <td>{{refe.ADU_DESP}} {{refe.NUM_PEDI}}</td>
+                                <td>{{refe.OPERA}}</td>
+                                <td>{{refe.NOM_IMP}}</td>
+                                <td>{{refe.CVE_PEDI}}</td>
+                                <td>{{refe.FEC_PAGO}}</td>
+                                <td>{{refe.EDOR}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>

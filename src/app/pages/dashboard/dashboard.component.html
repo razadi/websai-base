@@ -1,0 +1,275 @@
+<div class="r-aside">
+
+    <!-- ============================================================== -->
+    <!-- Projects of the month -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div>
+                            <h4 class="card-title"><span class="lstick"></span>Embarques de {{gMesActual}} {{gAnoActual}}</h4>
+                        </div>
+                        <div class="ml-auto">
+                            <select class="custom-select b-0" #selFilter (change)="onChangeFilter(selFilter.value)">
+                                <option value="0" selected>Todos</option>
+                                <option value="TER">Terminados</option>
+                                <option value="PRO">Procesando</option>
+                                <option value="RET">Retrasados</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="table-responsive" style="height: 300px; overflow: auto;">
+                        <!-- id="tblRefes"    data-page-size="10" -->
+                        <table class="table m-t-30 table-hover contact-list">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Referencia</th>
+                                    <th>F.Entrada</th>
+                                    <th>F.Pago</th>
+                                    <th>Estatus</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let ref of refes; let i of index">
+                                    <td style="width:50px;">
+                                        <span class="round" [ngClass]="{'round-danger': ref.TIPO === 'R', 'btn-facebook': ref.TIPO === 'E', 'btn-linkedin': ref.TIPO === 'I'}">{{ref.TIPO}}</span></td>
+                                    <td>
+                                        <h6><a [routerLink]="['/pedime', ref.NUM_REFE]">{{ref.NUM_REFE}}</a></h6><small class="text-muted"><a [routerLink]="['/pedi', ref.NUM_REFE]">Ped: {{ref.ADU_DESP}} {{ref.PAT_AGEN}} {{ref.NUM_PEDI}}</a></small></td>
+                                    <td>{{ref.FEC_ENTR}}</td>
+                                    <td>{{ref.FEC_PAGO}}</td>
+                                    <td>
+                                        <a [routerLink]="['/estatus', ref.NUM_REFE]">
+                                            <span class="label label-rounded" [ngClass]="{'label-info': ref.EDOR === 'PRO', 'label-warning': ref.EDOR === 'RET', 'label-success': ref.EDOR === 'TER'}">{{ref.EDOR}}</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2">
+                                        <!-- <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Add New Contact</button> -->
+                                    </td>
+                                    <td colspan="7">
+                                        <div class="text-right footable">
+                                            <ul class="pagination"> </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- Stats box -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex no-block">
+                        <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="../assets/images/icon/income.png" alt="Income" /></div>
+                        <a [routerLink]="['/embarques', 'REC']">
+                            <div class="align-self-center">
+                                <h6 class="text-muted m-t-10 m-b-0">Rectis.</h6>
+                                <h2 class="m-t-0">{{datos[0].recti}}</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex no-block">
+                        <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="../assets/images/icon/expense.png" alt="Income" /></div>
+                        <a [routerLink]="['/embarques', 'PRO']">
+                            <div class="align-self-center">
+                                <h6 class="text-muted m-t-10 m-b-0">En proceso</h6>
+                                <h2 class="m-t-0">{{datos[0].proce}}</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex no-block">
+                        <div class="m-r-20 align-self-center"><span class="lstick m-r-20"></span><img src="../assets/images/icon/assets.png" alt="Income" /></div>
+                        <a [routerLink]="['/embarques', 'TER']">
+                            <div class="align-self-center">
+                                <h6 class="text-muted m-t-10 m-b-0">Terminados</h6>
+                                <h2 class="m-t-0">{{datos[0].termi}}</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- Sales overview chart -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div>
+                            <h3 class="card-title m-b-5"><span class="lstick"></span>Operaciones</h3>
+                            <h6 class="card-subtitle">{{gMesActual}} {{gAnoActual}}</h6>
+                        </div>
+                        <div class="ml-auto">
+                            <ul class="list-inline">
+                                <li>
+                                    <div class="d-flex">
+                                        <i class="fa fa-circle font-10 m-r-10 text-primary m-t-10"></i>
+                                        <a [routerLink]="['/embarques', 'ALL']">
+                                            <div>
+                                                <h2 class="m-b-0">{{datos[0].total}}</h2>
+                                                <h6 class="text-muted">Embarques</h6>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="d-flex">
+                                        <i class="fa fa-circle font-10 m-r-10 text-info m-t-10"></i>
+                                        <a [routerLink]="['/embarques', 'IMP']">
+                                            <div>
+                                                <h2 class="m-b-0">{{datos[0].impos}}</h2>
+                                                <h6 class="text-muted">Importación</h6>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="d-flex">
+                                        <i class="fa fa-circle font-10 m-r-10 text-muted m-t-10"></i>
+                                        <a [routerLink]="['/embarques', 'EXP']">
+                                            <div>
+                                                <h2 class="m-b-0">{{datos[0].expos}}</h2>
+                                                <h6 class="text-muted">Exportación</h6>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-relative grafica-principal">
+                        <app-grafica-line [chartDataSet]="lineChartData" [chartLabels]="lineChartLabels" [chartOptions]="lineChartOptions" [chartColors]="lineChartColors" [chartLegend]="lineChartLegend"></app-grafica-line>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- visit charts-->
+    <!-- ============================================================== -->
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title"><span class="lstick"></span>Porcentajes</h4>
+                    <div>
+                        <!-- style="height: 150px;" -->
+                        <app-grafica-dona [chartLabels]="doughnutChartLabels" [chartData]="doughnutChartData" [chartOptions]="doughnutChartOptions" [chartColors]="doughnutChartColors"></app-grafica-dona>
+                    </div>
+                    <table class="table vm font-14">
+                        <tr>
+                            <td class="b-0">Impor.</td>
+                            <td class="text-right font-medium b-0">{{datos[0].pimpo}}%</td>
+                        </tr>
+                        <tr>
+                            <td>Expor.</td>
+                            <td class="text-right font-medium">{{datos[0].pexpo}}%</td>
+                        </tr>
+                        <tr>
+                            <td>Recti.</td>
+                            <td class="text-right font-medium">{{datos[0].prect}}%</td>
+                        </tr>
+                        <tr>
+                            <td>Desp.</td>
+                            <td class="text-right font-medium">{{datos[0].pterm}}%</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <h4 class="card-title"><span class="lstick"></span>Vista 2018</h4>
+                        <ul class="list-inline m-b-0 ml-auto">
+                            <li>
+                                <h6 class="text-muted text-info"><i class="fa fa-circle font-10 m-r-10 "></i>Importaciones</h6>
+                            </li>
+                            <li>
+                                <h6 class="text-muted text-muted"><i class="fa fa-circle font-10 m-r-10"></i>Exportaciones</h6>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="website-visitor p-relative m-t-30 grafica-principal-br">
+                        <!-- style="height:400px; width:100%;" -->
+                        <app-grafica-bar [chartLabels]="barChartLabels" [chartData]="barChartData" [chartOptions]="barChartOptions" [chartColors]="barChartColors"></app-grafica-bar>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- Right panel -->
+    <!-- ============================================================== -->
+    <aside class="right-side-panel">
+        <div class="row">
+            <!-- Weather Widget -->
+            <div class="col-md-12 m-t-10">
+                <h5 class="text-muted m-b-0">Embarques por aduana</h5>
+                <hr>
+                <table class="table">
+                    <tr *ngFor="let adu of aduas">
+                        <td><i class="icon-globe"></i> {{adu.anom}}</td>
+                        <td class="text-right font-medium">{{adu.apor}} %</td>
+                    </tr>
+                </table>
+                <hr>
+            </div>
+
+
+            <!-- twitter Widget -->
+            <div class="col-md-12 m-t-10">
+                <div class="card " *ngFor="let adu of aduas">
+                    <div class="card-body">
+                        <div class="d-flex">
+                            <div class="stats">
+                                <h1 class="">{{adu.atot}}</h1>
+                                <h6 class="text-muted">Aduana {{adu.adua}} ({{adu.anom}})</h6>
+                                <button class="btn btn-rounded btn-outline btn-secondary m-t-10 font-14" [routerLink]="['/aduana', adu.adua]">Ver embarques</button>
+                            </div>
+                            <div class="stats-icon text-right ml-auto"><i class="icon-globe display-5 op-3 text-dark"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+</div>

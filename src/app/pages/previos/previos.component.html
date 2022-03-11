@@ -1,0 +1,26 @@
+<div class="col-md-12">
+    <h4 class="card-title">Imágenes del reconocimiento previo de la referencia: <a [routerLink]="['/pedime', referencia]">{{referencia}}</a></h4>
+</div>
+
+<div class="card-columns">
+
+    <div class="card" *ngFor="let image of refeServ.images">
+        <a class="puntero" data-toggle="modal" data-target="#exampleModalCenter">
+            <img class="card-img-top" src="{{image.image}}" alt="Card image cap">
+        </a>
+        <div class="card-body text-center">
+            <h5 class="card-title">{{image.title}}</h5>
+            <p class="card-text"><small class="text-muted">{{image.fecha}}</small></p>
+            <p class="card-text">{{image.descrip}}</p>
+        </div>
+
+        <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <img src="{{image.image}}" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

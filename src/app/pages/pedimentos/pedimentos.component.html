@@ -1,0 +1,438 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="alert alert-success">
+            <i class="ti-file"></i> Pedimento validado y pagado
+            <button type="button" class="close" [routerLink]="['/dashboard']"> <span aria-hidden="true">&times;</span> </button>
+        </div>
+        <div class="card card-body printableArea">
+            <table class="tblPedi table-responsive" *ngIf="ref">
+                <!-- titulo y referencia -->
+                <tr>
+                    <td colspan="8" align="center" class="tblTituleGris tblBorderRB w80p">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="56%" align="right">PEDIMENTO</td>
+                                <td width="44%" align="center">REF: &nbsp;&nbsp;&nbsp; {{referencia}}</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td align="right" class="tblFont06 tblBorderB w900"><em>Página  1 de 1 &nbsp;&nbsp;&nbsp;</em></td>
+                </tr>
+                <!-- datos del pedimento -->
+                <tr>
+                    <td colspan="8" class="tblPedi2 tblBorderRB tblMarginL">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="32%"><span class="tblFontn">NUM. PEDIMENTO:</span> {{ref.ADU_DESP}} {{ref.PAT_AGEN}} {{ref.NUM_PEDI}}</td>
+                                <td width="19%"><span class="tblFontn">T.OPER.:</span> {{ref.OPERA}}</td>
+                                <td width="29%"><span class="tblFontn">CVE. PEDIMENTO:</span> {{ref.CVE_PEDI}}</td>
+                                <td width="20%"><span class="tblFontn">REGIMEN:</span> IMD</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td align="center" class="tblBorderB tblFontn">CERTIFICACIONES</td>
+                </tr>
+                <!-- datos 2 de pedimentos -->
+                <tr>
+                    <td colspan="8" class="tblPedi2 tblBorderRB tblMarginL">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="23%"><span class="tblFontn">DESTINO:</span> 9</td>
+                                <td width="28%"><span class="tblFontn">TIPO CAMBIO:</span> 20.12770</td>
+                                <td width="29%"><span class="tblFontn">PESO BRUTO:</span> 555.000</td>
+                                <td width="20%"><span class="tblFontn">ADUANA E/S:</span> 470</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td rowspan="11" valign="top" class="tblMarginL">
+                        <div class="tblFontPago">
+                            ***PAGO ELECTRONICO***
+                            <br>BBVA BANCOMER, S.A. de C.V.
+                            <br>9999 80002112
+                            <br>OP: 08355533323
+                            <br>21/12/2018
+                            <br>ACUSE: DFSSAEKLJHSD
+                            <br>IMPORTE TOTAL: $60,122.00
+                            <br>CONTRIB. OTRAS F.P.: $0.00
+                            <br>CONTRIB. EFECTIVO: $60,122.00
+                            <br>TOTAL DE CONTRIBUCIONES: $0.00
+                            <br>CONTRAPRESTACION: $23.00
+                        </div>
+                    </td>
+                </tr>
+                <!-- transporte y valores -->
+                <tr>
+                    <td colspan="4" class="tblPedi2 tblBorderRB">
+                        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td colspan="3" align="center"><span class="tblFontn">MEDIOS DE TRANSPORTE</span></td>
+                            </tr>
+                            <tr>
+                                <td align="center"><span class="tblFontn">ENTRADA/ SALIDA:</span></td>
+                                <td align="center"><span class="tblFontn">ARRIBO:</span></td>
+                                <td align="center"><span class="tblFontn">SALIDA:</span></td>
+                            </tr>
+                            <tr>
+                                <td align="center">4</td>
+                                <td align="center">4</td>
+                                <td align="center">7</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td colspan="4" align="center" class="tblPedi2 tblBorderRB tblMarginR">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="80%" align="right"><span class="tblFontn">VALOR DOLARES:</span></td>
+                                <td width="20%" align="right">17,556.29</td>
+                            </tr>
+                            <tr>
+                                <td align="right"><span class="tblFontn">VALOR ADUANA:</span></td>
+                                <td align="right">353,364</td>
+                            </tr>
+                            <tr>
+                                <td align="right"><span class="tblFontn">PRECIO PAGADO/VALOR COMERCIAL:</span></td>
+                                <td align="right">308,798</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Importador -->
+                <tr>
+                    <td colspan="8" align="center" class="tblTituleGris tblBorderB"><span class="tblFontn">DATOS DEL IMPORTADOR / EXPORTADOR</span></td>
+                </tr>
+                <tr>
+                    <td colspan="8" class="tblPedi2 tblBorderB tblMarginL">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td valign="middle"><span class="tblFontn">RFC:</span> TRD181123R12</td>
+                                <td valign="middle"><span class="tblFontn">NOMBRE, DENOMINACION O RAZON SOCIAL:</span> </td>
+                            </tr>
+                            <tr>
+                                <td valign="middle"><span class="tblFontn">CURP:</span></td>
+                                <td valign="middle">IMPORTADOR AC DE CV</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table width="90%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="15%" valign="top"><span class="tblFontn">DOMICILIO:</span></td>
+                                <td width="85%">AV. CONOCIDA No.Ext.23 Int.2 COLONIAL C.P. 08876 CIUDAD DE MEXICO, MEXICO (ESTADOS UNIDOS MEXICANOS)</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- incrementables -->
+                <tr>
+                    <td colspan="8" class="tblPedi2 tblBorderB tblMarginL">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td align="center"><span class="tblFontn">VAL.SEGUROS</span></td>
+                                <td align="center"><span class="tblFontn">SEGUROS</span></td>
+                                <td align="center"><span class="tblFontn">FLETES</span></td>
+                                <td align="center"><span class="tblFontn">EMBALAJES</span></td>
+                                <td align="center"><span class="tblFontn">OTROS INCREMENTABLES</span></td>
+                            </tr>
+                            <tr>
+                                <td align="center">0</td>
+                                <td align="center">0</td>
+                                <td align="center">22334</td>
+                                <td align="center">0</td>
+                                <td align="center">0</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- codigo barras y aceptacion -->
+                <tr>
+                    <td colspan="8" class="tblPedi2 tblBorderB tblMarginL">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="20%" valign="top"><span class="tblFontn">CÓDIGO DE ACEPTACIÓN:</span></td>
+                                <td width="50%" align="center" valign="top"><span class="tblFontn">CÓDIGO DE BARRAS:</span></td>
+                                <td width="30%" valign="top"><span class="tblFontn">CLAVE DE LA SECCION ADUANERA DE DESPACHO: </span> 470</td>
+                            </tr>
+                            <tr>
+                                <td valign="middle" align="center">BINA76ZS5</td>
+                                <td> &nbsp; </td>
+                                <td valign="middle">AEROPUERTO INTERNACIONAL DE LA CIUDAD DE MEXICO</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- mARCASy numeros -->
+                <tr>
+                    <td colspan="8" class="tblPedi2 tblBorderB tblMarginL">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="35%"><span class="tblFontn">MARCAS, NUMEROS Y TOTAL DE BULTOS</span></td>
+                                <td width="15%" align="left">S7M S7N</td>
+                                <td width="40%">&nbsp;</td>
+                                <td width="10%">2</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- fechas -->
+                <tr>
+                    <td colspan="3" rowspan="2" valign="top" class="tblPedi2 tblBorderRB tblMarginL">
+                        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td colspan="2" align="center"><span class="tblFontn">FECHAS</span></td>
+                            </tr>
+                            <tr>
+                                <td width="70%"><span class="tblFontn">ENTRADA</span></td>
+                                <td width="30%">20/12/2018</td>
+                            </tr>
+                            <tr>
+                                <td><span class="tblFontn">PAGO</span></td>
+                                <td>21/12/2018</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td colspan="5" align="center" class="tblTituleGris tblBorderB">TASAS A NIVEL PEDIMENTO</td>
+                </tr>
+                <!-- tASAs  -->
+                <tr>
+                    <td colspan="5" class="tblPedi2">
+                        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="39%" align="center" class="tblBorderR"><span class="tblFontn">CONTRIB.</span></td>
+                                <td width="40%" align="center" class="tblBorderR"><span class="tblFontn">CVE. T. TASA</span></td>
+                                <td width="21%" align="center"><span class="tblFontn">TASA</span></td>
+                            </tr>
+                            <!-- aqui recorro las tasas de contribuciones -->
+                            <tr>
+                                <td align="center" class="tblBorderR">1 DTA</td>
+                                <td align="center" class="tblBorderR">7</td>
+                                <td align="center">8.000</td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="tblBorderR">15 PRV</td>
+                                <td align="center" class="tblBorderR">2</td>
+                                <td align="center">240.000</td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="tblBorderR">21 CNT</td>
+                                <td align="center" class="tblBorderR">2</td>
+                                <td align="center">20.000</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Cuador de liquidacion -->
+                <tr>
+                    <td colspan="8" align="center" class="tblTituleGris tblBorderB">CUADRO DE LIQUIDACION</td>
+                </tr>
+                <tr>
+                    <td colspan="3" align="center" valign="top" class="tblPedi2">
+                        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="46%" align="center" class="tblBorderB tblBorderR"><span class="tblFontn">CONCEPTO</span></td>
+                                <td width="14%" align="center" class="tblBorderB tblBorderR"><span class="tblFontn">F.P.</span></td>
+                                <td width="39%" align="center" class="tblBorderB tblBorderR"><span class="tblFontn">IMPORTE</span></td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="tblBorderR">DTA</td>
+                                <td align="center" class="tblBorderR">0</td>
+                                <td align="right" class="tblBorderR tblMarginR">2827</td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="tblBorderR">CNT</td>
+                                <td align="center" class="tblBorderR">0</td>
+                                <td align="right" class="tblBorderR tblMarginR">62</td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="tblBorderR">&nbsp;</td>
+                                <td align="center" class="tblBorderR">&nbsp;</td>
+                                <td align="right" class="tblBorderR tblMarginR">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td colspan="3" align="center" valign="top" class="tblPedi2">
+                        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="46%" align="center" class="tblBorderB tblBorderR"><span class="tblFontn">CONCEPTO</span></td>
+                                <td width="14%" align="center" class="tblBorderB tblBorderR"><span class="tblFontn">F.P.</span></td>
+                                <td width="39%" align="center" class="tblBorderB "><span class="tblFontn">IMPORTE</span></td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="tblBorderR">PRV</td>
+                                <td align="center" class="tblBorderR">0</td>
+                                <td align="right" class="tblMarginR">240</td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="tblBorderR">IVA</td>
+                                <td align="center" class="tblBorderR">0</td>
+                                <td align="right" class="tblMarginR">56993</td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="tblBorderR">&nbsp;</td>
+                                <td align="center" class="tblBorderR">&nbsp;</td>
+                                <td align="right" class="tblMarginR">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td colspan="2" class="tblBorderL">
+                        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td colspan="2" align="center" class="tblBorderB"><span class="tblFontn">TOTALES</span></td>
+                            </tr>
+                            <tr>
+                                <td class="tblBorderRB">&nbsp;<span class="tblFontn">EFECTIVO</span></td>
+                                <td align="right" class="tblBorderB tblMarginR">60,122</td>
+                            </tr>
+                            <tr>
+                                <td class="tblBorderRB">&nbsp;<span class="tblFontn">OTROS</span></td>
+                                <td align="right" class="tblBorderB tblMarginR">0</td>
+                            </tr>
+                            <tr>
+                                <td class="tblBorderR">&nbsp;<span class="tblFontn">TOTAL</span></td>
+                                <td align="right" class="tblMarginR">60,122</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- TODO: Aqui va lo de las rectificaciones -->
+
+                <!-- proveedor -->
+                <tr>
+                    <td colspan="9" align="center" class="tblTituleGris tblBorderB">DATOS DEL PROVEEDOR O COMPRADOR</td>
+                </tr>
+
+                <tr>
+                    <td colspan="9" class="tblBorderB tblMarginL">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="10%" align="left"><span class="tblFontn">ID. FISCAL</span></td>
+                                <td width="30%" align="left"><span class="tblFontn">NOMBRE, DENOMINACION O RAZON SOCIAL</span></td>
+                                <td width="50%" align="left"><span class="tblFontn">DOMICILIO</span></td>
+                                <td width="10%" align="left"><span class="tblFontn">VINCULACION</span></td>
+                            </tr>
+                            <tr>
+                                <td align="left" valign="top">ITQ231123</td>
+                                <td align="left" valign="top">NOMBRE PROVEEDOR DE IMPORTACIÓN S.A.</td>
+                                <td align="left" valign="top">VIA CONOCIDA No. Ext. 221 ROZZANO, MILAN C.P.23423 ITALIA (REPUBLICA ITALIANA)</td>
+                                <td align="center" valign="top">NO</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- facturas -->
+                <tr>
+                    <td colspan="9" class="tblBorderB tblMarginL">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="30%" align="center" class="tblBorderR"><span class="tblFontn">NUM. FACTURA</span></td>
+                                <td width="10%" align="center" class="tblBorderR"><span class="tblFontn">FECHA</span></td>
+                                <td width="10%" align="center" class="tblBorderR"><span class="tblFontn">INCOTERM</span></td>
+                                <td width="10%" align="center" class="tblBorderR"><span class="tblFontn">MONEDA FACT.</span></td>
+                                <td width="10%" align="center" class="tblBorderR"><span class="tblFontn">VAL.MON.FACT</span></td>
+                                <td width="10%" align="center" class="tblBorderR"><span class="tblFontn">FACTOR MON.</span></td>
+                                <td width="10%" align="center"><span class="tblFontn">VAL. DOLARES</span></td>
+                            </tr>
+                            <tr>
+                                <td align="left" class="tblBorderR">23423512</td>
+                                <td align="center" class="tblBorderR">19/12/2018</td>
+                                <td align="center" class="tblBorderR">DAT</td>
+                                <td align="center" class="tblBorderR">EUR</td>
+                                <td align="right" class="tblBorderR tblMarginR">184,000.00</td>
+                                <td align="right" class="tblBorderR tblMarginR">1.18213422</td>
+                                <td align="right" class="tblMarginR">217,712.03</td>
+                            </tr>
+                            <tr>
+                                <td align="left">COVE1231244232PE</td>
+                                <td align="center">&nbsp;</td>
+                                <td align="center">&nbsp;</td>
+                                <td align="center">&nbsp;</td>
+                                <td align="right">&nbsp;</td>
+                                <td align="right">&nbsp;</td>
+                                <td align="right">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- TODO:  transporte -->
+
+                <!-- guias -->
+                <tr>
+                    <td colspan="9" class="tblBorderB">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="31%" align="center" class="tblTituleGris tblBorderR">NO. (GUIA/ORDEN EMBARQUE)/ID)</td>
+                                <td width="21%" align="center" class="tblBorderR">132-234245645555556</td>
+                                <td width="3%" align="center" class="tblBorderR">M</td>
+                                <td width="22%" align="center" class="tblBorderR">ASD211312345345</td>
+                                <td width="3%" align="center" class="tblBorderR">H</td>
+                                <td width="14%" align="center" class="tblBorderR">&nbsp;</td>
+                                <td width="6%" class="tblPedi1">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Complementos -->
+                <tr>
+                    <td colspan="9" class="tblBorderB">
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="24%" align="center" class="tblBorderR"><span class="tblFontn">CLAVE/COMPL. IDENTIFICADOR</span></td>
+                                <td width="2%" align="center" class="tblBorderR">&nbsp;</td>
+                                <td width="34%" align="center" class="tblBorderR"><span class="tblFontn">COMPLEMENTO 1</span></td>
+                                <td width="20%" align="center" class="tblBorderR"><span class="tblFontn">COMPLEMENTO 2</span></td>
+                                <td width="20%" align="center"><span class="tblFontn">COMPLEMENTO 3</span></td>
+                            </tr>
+                            <!-- recorro -->
+                            <tr>
+                                <td align="center" class="tblBorderR"></td>
+                                <td align="center" class="tblBorderR tblMarginL tblMarginR">CR</td>
+                                <td align="center" class="tblBorderR">76</td>
+                                <td align="center" class="tblBorderR"></td>
+                                <td align="center"></td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="tblBorderR"></td>
+                                <td align="center" class="tblBorderR">ED</td>
+                                <td align="center" class="tblBorderR">123412344513421</td>
+                                <td align="center" class="tblBorderR">ADSGFSDDGSDFGSDF</td>
+                                <td align="center"></td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="tblBorderR"></td>
+                                <td align="center" class="tblBorderR">ED</td>
+                                <td align="center" class="tblBorderR">034123412342343</td>
+                                <td align="center" class="tblBorderR">ASDGASDGASDFASD</td>
+                                <td align="center"></td>
+                            </tr>
+                            <tr>
+                                <td align="center" class="tblBorderR"></td>
+                                <td align="center" class="tblBorderR">ED</td>
+                                <td align="center" class="tblBorderR">098ASD399823879</td>
+                                <td align="center" class="tblBorderR">DFADFAGDS</td>
+                                <td align="center"></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- Observaciones -->
+                <tr>
+                    <td colspan="9" align="center" class="tblTituleGris tblBorderB">OBSERVACIONES</td>
+                </tr>
+                <tr>
+                    <td colspan="9" align="left" class="tblMarginL">
+                        <p>IMPORTADOR: IMPORTADORES, S. DE R.L. DE C.V. - DE CONFORMIDAD CON LO ESTABLECIDO EN LOS ARTICULOS 36 Y 36A FRACCION I INCISOS A B Y C RESPECTIVAMENTE DE LA LEY ADUANERA EN VIGOR Y EN APEGO A LO ESTABLECIDO EN RGCE 3.1.30 SE DIGITALIZAN
+                            Y SE FIRMAN ELECTRONICAMENTE MEDIANTE ACUSE DE VALOR Y E-DOCUMENTS LO SIGUIENTE: - DE CONFORMIDAD CON LO ESTABLECIDO EN EL ART. 36A FRACC. I INCISO A) Y 64 DE LA L.A, Y DE ACUERDO A LO ESTABLECIDO CON LA RGCE 1.9.18 Y 1.9.21
+                            SE TRAMITA EL ACUSE DE VALOR. -DE ACUERDO CON LO ESTABLECIDO EN EL ARTICULO 36 A FRACCION I INCISO B) SE DIGITALIZA GUIA AEREA REVALIDADA. -CONFORME A LO ESTABLECIDO EN EL ART. 65 DE LA LEY ADUANERA VIGENTE SE REALIZA DESGLOSE
+                            DE GASTOS INCREMENTABLES CONFORME A FACTURA COMERCIAL SIN DECLARARLOS DENTRO DEL ACUSE DE VALOR. DE CONFORMIDAD CON LO DISPUESTO EN EL ARTICULO 117 DEL REGLAMENTO DE LA LEY ADUANERA, 65 FRACCION I, INCISO D) DE LA LEY ADUANERA,
+                            SE DETERMINA UN VALOR EN ADUANA PROVISIONAL DERIVADO DE LA EXISTENCIA DE UN CONTRATO DE PÓLIZA DE SEGURO GLOBAL DE TRANSPORTE ANUAL, INCREMENTANDO AL PRECIO PAGADO POR LAS MERCANCIAS EL FACTOR CORRESPONDIENTE Y TRANSMITIENDO
+                            EN DOCUMENTO ELECTRONICO EL AVISO ANTE LA ADACE. - SE APLICA PREFERENCIA ARANCELARIA A LA MERCANCIA MENCIONADA EN FACTURA COMERCIAL 2017201170 MEDIANTE CERTIFICADO DE ORIGEN EUR 1 NO. 122840 DE CONFORMIDAD CON EL APENDICE IV
+                            DEL ANEXO III Y LA R.V.EN MATERIA ADUANERA DE LA DECISION 2/2000 PUNTO 2.2.1, PARA T.L.C CON LA COMUNIDAD EUROPEA. - IMPORTACION DE CONFORMIDAD CON LO ESTABLECIDO EN LOS ARTICULOS 59 FRACCION III Y 54 DE LA LEY ADUANERA.
+                        </p>
+                    </td>
+                </tr>
+
+
+
+
+            </table>
+        </div>
+    </div>
+</div>

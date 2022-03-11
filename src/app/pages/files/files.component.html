@@ -1,0 +1,45 @@
+<div class="col-md-12">
+    <h4 class="card-title">Archivo Digital de la referencia: <a [routerLink]="['/pedime', referencia]">{{referencia}}</a></h4>
+    <!-- <h6 class="card-subtitle m-b-20 text-muted">you can make gallery like this</h6> -->
+</div>
+
+<!-- class="card-columns widget-app-columns" -->
+<div class="row">
+
+    <div class="col-lg-6 col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Administrativos</h4>
+            </div>
+
+            <div class="comment-widgets m-b-20">
+                <ul class="feeds" *ngFor="let file of filesadmi">
+                    <li>
+                        <div class="bg-light-info"><i class="fa {{file.ico}}"></i></div>
+                        <a href="{{file.file}}" target="_blank"> {{file.name}} </a>
+                        <span class="text-muted">{{file.size | number }} kb</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">De Operación</h4>
+            </div>
+
+            <div class="comment-widgets m-b-20">
+                <ul class="feeds" *ngFor="let file of filesoper">
+                    <li>
+                        <div class="bg-light-info"><i class="fa {{file.ico}}"></i></div>
+                        <a href="{{file.file}}" target="_blank"> {{file.name}} </a>
+                        <span class="text-muted">{{file.size | number }} kb</span>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>

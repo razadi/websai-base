@@ -1,0 +1,59 @@
+<aside class="left-sidebar">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+                <li class="user-profile">
+                    <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><img src="assets/images/users/profile.png" alt="user" /><span class="hide-menu">{{userServ.usuario}}</span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a [routerLink]="['/profile']" routerLinkActive="active">Profile </a></li>
+                        <li><a class="puntero" (click)="logout()">Logout</a></li>
+                    </ul>
+                </li>
+                <!-- <li class="nav-devider"></li>
+                <li class="nav-small-cap">PERSONAL</li>
+                <li><a class="waves-effect waves-dark" [routerLink]="['/dashboard']" routerLinkActive="active"><i class="mdi mdi-gauge"></i><span >Principal</span></a></li>
+                <li><a class="waves-effect waves-dark" [routerLink]="['/embarques', 'ALL']" routerLinkActive="active"><i class="mdi mdi-gauge"></i><span >Embarques</span></a></li>
+                <li><a class="waves-effect waves-dark" [routerLink]="['/embarques', 'REC']" routerLinkActive="active"><i class="mdi mdi-gauge"></i><span >Rectificaciones</span></a></li> -->
+                <li class="nav-devider"></li>
+                <li class="nav-small-cap">Menú principal</li>
+                <!-- <span class="label label-rouded label-themecolor pull-right">4</span> -->
+                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard </span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a [routerLink]="['/dashboard']" routerLinkActive="active">Embarques </a></li>
+                        <li><a [routerLink]="['/facturas']" routerLinkActive="active">Facturas</a></li>
+                    </ul>
+                </li>
+                <!-- <li class="nav-small-cap"><a [routerLink]="['/dashboard']">Menu 1</a></li> -->
+                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file"></i><span class="hide-menu">Reportes </span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a [routerLink]="['/reporte', 1]" routerLinkActive="active">General </a></li>
+                        <li><a [routerLink]="['/reporte', 2]" routerLinkActive="active">Anexo 24</a></li>
+                        <li><a [routerLink]="['/reporte', 3]" routerLinkActive="active">Cuenta Gtos.</a></li>
+                        <li><a [routerLink]="['/reporte', 4]" routerLinkActive="active">Ctrl. Indicadores </a></li>
+                        <li class="nav-devider"></li>
+                        <li><a [routerLink]="['/reporteador']" routerLinkActive="active">Reporteador </a></li>
+                    </ul>
+                </li>
+                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-file-chart"></i><span class="hide-menu">Gráficas</span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a [routerLink]="['/graficae']" routerLinkActive="active">Embarques</a></li>
+                        <li><a [routerLink]="['/graficaf']" routerLinkActive="active">Facturas</a></li>
+                        <li><a [routerLink]="['/graficak']" routerLinkActive="active">KPIs</a></li>
+                    </ul>
+                </li>
+                <li> <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-chart-line"></i><span class="hide-menu">Estadísticas</span></a>
+                    <ul aria-expanded="false" class="collapse">
+                        <li><a [routerLink]="['/estadis', 1]" routerLinkActive="active">Generales</a></li>
+                        <!-- <li><a [routerLink]="['/estadis', 2]" routerLinkActive="active">Facturas</a></li>
+                        <li><a [routerLink]="['/estadis', 3]" routerLinkActive="active">Tendencia</a></li> -->
+                    </ul>
+                </li>
+                <li class="nav-devider"></li>
+            </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+</aside>
